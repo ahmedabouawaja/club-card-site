@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}حساب جديد — كارد لينك{% endblock %}
+{% block content %}
+<section class="auth-wrap">
+<section class="form-card">
+  <h1>حساب جديد</h1>
+  <form method="post" novalidate>
+    {{ form.hidden_tag() }} {# renders the CSRF token #}
+
+    <label for="name">{{ form.name.label.text }}</label>
+    {{ form.name(id="name", autocomplete="name") }}
+    {% for e in form.name.errors %}<p class="field-error">{{ e }}</p>{% endfor %}
+
+    <label for="email">{{ form.email.label.text }}</label>
+    {{ form.email(id="email", autocomplete="email") }}
+    {% for e in form.email.errors %}<p class="field-error">{{ e }}</p>{% endfor %}
+
+    <label for="password">{{ form.password.label.text }}</label>
+    {{ form.password(id="password", autocomplete="new-password") }}
+    {% for e in form.password.errors %}<p class="field-error">{{ e }}</p>{% endfor %}
+
+    <label for="confirm">{{ form.confirm.label.text }}</label>
+    {{ form.confirm(id="confirm", autocomplete="new-password") }}
+    {% for e in form.confirm.errors %}<p class="field-error">{{ e }}</p>{% endfor %}
+
+    <button type="submit" class="btn-accent full">إنشاء الحساب</button>
+  </form>
+  <p class="muted">عندك حساب؟ <a href="{{ url_for('auth.login') }}">دخول</a></p>
+</section>
+</section>
+{% endblock %}

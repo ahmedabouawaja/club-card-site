@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head>
+<meta charset="utf-8">
+<title>الكارت الشخصي</title>
+<script src="/static/dc/01_6105947d/5b59ca0e-0d5f-447b-a39f-e43a0c7dec84.js"></script>
+<script src="/static/dc/01_6105947d/fa8eef60-baa8-4f92-85fd-4135d343bb0b.js"></script>
+<script src="/static/dc/01_6105947d/129401d0-c6e4-4460-beba-dcdbf76688f3.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* arabic */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/33cd8953-392a-4d2f-b4fa-9b193ee95896.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/449dfa2a-cc4b-4a6e-b625-f75a6f037c18.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/0f00b3ff-b2ef-4f91-8357-cd97a6df7faa.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/a8b686d5-f2ee-49b7-a412-a04682b5d09d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/33cd8953-392a-4d2f-b4fa-9b193ee95896.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/449dfa2a-cc4b-4a6e-b625-f75a6f037c18.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/0f00b3ff-b2ef-4f91-8357-cd97a6df7faa.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/a8b686d5-f2ee-49b7-a412-a04682b5d09d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/33cd8953-392a-4d2f-b4fa-9b193ee95896.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/449dfa2a-cc4b-4a6e-b625-f75a6f037c18.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/0f00b3ff-b2ef-4f91-8357-cd97a6df7faa.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/a8b686d5-f2ee-49b7-a412-a04682b5d09d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/33cd8953-392a-4d2f-b4fa-9b193ee95896.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/449dfa2a-cc4b-4a6e-b625-f75a6f037c18.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/0f00b3ff-b2ef-4f91-8357-cd97a6df7faa.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/a8b686d5-f2ee-49b7-a412-a04682b5d09d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/23e5f5e0-609c-49a3-996c-9f4a92912cbe.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/370d7029-8650-46e7-971c-ec580b4ffefc.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/e4ea2967-de6d-4036-87fe-42e98afe927e.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/c79afe3e-9569-41ad-bafe-9548a66d27a0.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/70f38499-daca-4912-9940-6fab205a252d.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/cf840625-20c5-429d-b1dd-1d6ed8e9a891.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/f2b59ac2-9f1b-4a7d-ad2b-5c40bc3c4e6f.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/e01ec6ea-b8f3-43dc-9c1e-890dc7da8e45.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/b3cd6b9e-37fa-46f0-a1d7-b8fa02ab8938.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/068e8aa2-cd8e-45d7-9c53-2f8f74f6fcaf.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/bcf570fd-b3d3-42f8-ad90-cbfd3dc0c3d6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/2c081140-3b14-424a-a8db-d5447e18f992.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/231328f9-71e4-4c62-8e54-91e5e3c2e37d.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/fc19de27-745d-41f4-a8d4-640b94abfd86.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/bede6b76-0777-4ce6-80bc-00035f756a8a.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/01_6105947d/bdfe8561-ed4d-41e6-8ba4-da2a19541a0f.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0;background:#191410;font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif}
+a{color:#ffffff}a:hover{color:#f0d9b5}
+button{font-family:inherit}
+input::placeholder{color:rgba(255,255,255,0.4)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes sheen{0%{transform:translateX(-160%) skewX(-18deg)}55%,100%{transform:translateX(260%) skewX(-18deg)}}
+@keyframes line{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.enter{animation:fadeUp .8s cubic-bezier(.2,.7,.2,1) both}
+.enter2{animation:fadeUp .8s cubic-bezier(.2,.7,.2,1) .15s both}
+.enter3{animation:fadeUp .8s cubic-bezier(.2,.7,.2,1) .3s both}
+.bob{animation:bob 6s ease-in-out infinite}
+.sheen{animation:sheen 5s ease-in-out infinite}
+.line{animation:line 2.4s ease-in-out infinite}
+.reveal{animation:fadeUp linear both;animation-timeline:view();animation-range:entry 0% cover 26%}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+
+<div style="width: 1440px; height: 2700px; box-sizing: border-box; position: relative; overflow: clip; background: #191410; color: #ffffff; font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif">
+
+  <!-- ============ .01 — I AM ============ -->
+  <section style="position: relative; height: 900px; background: radial-gradient(ellipse 60% 55% at 50% 40%, #40332a, #1d1712 72%)">
+    <nav style="position: absolute; top: 44px; left: 72px; right: 72px; display: flex; justify-content: space-between; align-items: flex-start">
+      <a href="/" style="display: flex; flex-direction: column; gap: 0; text-decoration: none; font-family: 'Alexandria', sans-serif; font-weight: 800; font-size: 17px; line-height: 1.1; color: #ffffff">
+        <span>{{brandWord1}}</span>
+        <span>{{brandWord2}}</span>
+      </a>
+      <div style="display: flex; gap: 40px; font-size: 14px">
+        <a href="/" style="color: rgba(255,255,255,0.78); text-decoration: none">الرئيسية</a>
+        <a href="/flex" style="color: rgba(255,255,255,0.78); text-decoration: none">فليكس</a>
+        <a href="/readers" style="color: rgba(255,255,255,0.78); text-decoration: none">أجهزة الدخول</a>
+        <a href="#designs" style="color: rgba(255,255,255,0.78); text-decoration: none">التصميمات</a>
+        <a href="#contact" style="color: rgba(255,255,255,0.78); text-decoration: none">تواصل</a>
+      </div>
+    </nav>
+
+    <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span class="enter" style="align-self: flex-start; font-size: 16px; color: rgba(255,255,255,0.62); padding-right: 8px">أنا</span>
+        <h1 class="enter2" style="margin: 0; font-family: 'Alexandria', sans-serif; font-weight: 800; font-size: {{nameSize}}px; line-height: 1.05; letter-spacing: -2px; text-shadow: 0 18px 40px rgba(0,0,0,0.55), 0 0 60px rgba(255,255,255,0.08); text-align: center; max-width: 1200px">{{nameDisplay}}</h1>
+        <div class="enter3" style="align-self: flex-end; display: flex; flex-direction: column; gap: 2px; font-size: 15px; color: rgba(255,255,255,0.62); padding-left: 8px">
+          <span>كارت شخصي ذكي</span>
+          <span>لمسة واحدة تفتح كل روابطك</span>
+        </div>
+      </div>
+      <div class="enter3" style="margin-top: 56px; display: flex; flex-direction: column; align-items: center; gap: 10px">
+        <label for="heroName" style="font-size: 14px; color: rgba(255,255,255,0.62)">اكتب اسمك وشوفه على الكارت</label>
+        <input id="heroName" type="text" value="{{name}}" sc-camel-on-change="{{setName}}" placeholder="اسمك" maxlength="28" style="width: 420px; height: 52px; padding: 0 8px; border: none; border-bottom: 1px solid rgba(255,255,255,0.3); background: transparent; color: #ffffff; font-size: 20px; font-family: inherit; text-align: center; outline: none">
+        <label for="avatar" style="position: relative; margin-top: 14px; height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(240,217,181,0.35); display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; font-weight: 600; color: #f0d9b5">
+          <sc-if value="{{hasImg}}" hint-placeholder-val="{{false}}">
+            <img src="{{img}}" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover">
+          </sc-if>
+          <sc-if value="{{noImg}}" hint-placeholder-val="{{true}}">
+            <svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"></path></svg>
+          </sc-if>
+          {{avatarLabel}}
+          <input id="avatar" type="file" accept="image/png,image/jpeg,image/webp,image/gif" sc-camel-on-change="{{onUpload}}" style="position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden">
+        </label>
+        <span style="font-size: 13px; color: rgba(255,255,255,0.5)">صورة أو أفاتار — حتى لو متحرك (GIF)</span>
+      </div>
+    </div>
+
+    <div style="position: absolute; right: 72px; bottom: 56px; display: flex; flex-direction: column; gap: 18px">
+      <a href="#" aria-label="فيسبوك" style="color: rgba(255,255,255,0.7)"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"></path></svg></a>
+      <a href="#" aria-label="انستجرام" style="color: rgba(255,255,255,0.7)"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6"></circle></svg></a>
+      <a href="{{waLink}}" aria-label="واتساب" style="color: rgba(255,255,255,0.7)"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"></path></svg></a>
+    </div>
+    <a href="#designs" style="position: absolute; left: 72px; bottom: 56px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-decoration: none; color: rgba(255,255,255,0.62)">
+      <span style="writing-mode: vertical-rl; font-size: 11px; letter-spacing: 3px; font-family: 'Alexandria', sans-serif">SCROLL</span>
+      <span style="width: 1px; height: 56px; background: rgba(255,255,255,0.18); position: relative; overflow: hidden"><span class="line" style="position: absolute; inset: 0; background: #ffffff"></span></span>
+    </a>
+    <span style="position: absolute; left: 72px; top: 50%; font-family: 'Alexandria', sans-serif; font-size: 13px; color: rgba(255,255,255,0.45)">.01</span>
+  </section>
+
+  <!-- ============ .02 — DESIGNS ============ -->
+  <section id="designs" style="position: relative; height: 900px; background: radial-gradient(ellipse 60% 50% at 50% 38%, #3a2e25, #1b1511 72%); display: flex; flex-direction: column; align-items: center; padding-top: 90px; box-sizing: border-box">
+    <span class="reveal" style="font-size: 14px; color: rgba(255,255,255,0.62)">اختر شكل كارتك</span>
+
+    <div class="bob" style="position: relative; width: 1100px; height: 380px; margin-top: 30px">
+      <sc-for list="{{slides}}" as="c" hint-placeholder-count="4">
+        <div style="position: absolute; left: 50%; top: 50%; width: 440px; height: 278px; margin-left: -220px; margin-top: -139px; border-radius: 22px; overflow: hidden; background: {{c.bg}}; transform: {{c.tf}}; filter: {{c.blur}}; opacity: {{c.op}}; z-index: {{c.z}}; box-shadow: 0 40px 80px rgba(0,0,0,0.6); transition: transform .75s cubic-bezier(.6,0,.2,1), filter .75s ease, opacity .75s ease">
+          <div style="position: absolute; inset: 0; padding: 28px 30px; display: flex; flex-direction: column; justify-content: space-between">
+            <div style="display: flex; justify-content: space-between; align-items: center">
+              <span style="font-size: 13px; font-weight: 600; color: {{c.sub}}">{{brandName}}</span>
+              <svg width="26" height="26" sc-camel-view-box="0 0 24 24" fill="none" stroke="{{c.fg}}" stroke-width="2" stroke-linecap="round"><path d="M8 8a6 6 0 0 1 0 8M11.5 5.5a10 10 0 0 1 0 13M15 3a14 14 0 0 1 0 18"></path></svg>
+            </div>
+            <div style="display: flex; align-items: center; gap: 16px">
+              <sc-if value="{{hasImg}}" hint-placeholder-val="{{false}}">
+                <img src="{{img}}" alt="" style="width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 3px solid {{c.fg}}; box-sizing: border-box; flex-shrink: 0">
+              </sc-if>
+              <div style="display: flex; flex-direction: column; gap: 4px">
+                <span style="font-family: 'Alexandria', sans-serif; font-size: 28px; font-weight: 700; color: {{c.fg}}">{{nameDisplay}}</span>
+                <span style="font-size: 13px; color: {{c.sub}}">المس الكارت بموبايلك</span>
+              </div>
+            </div>
+          </div>
+          <div class="sheen" style="position: absolute; top: 0; bottom: 0; width: 30%; background: linear-gradient(90deg, rgba(255,255,255,0), {{c.shine}}, rgba(255,255,255,0))"></div>
+        </div>
+      </sc-for>
+
+      <button sc-camel-on-click="{{prev}}" aria-label="التصميم السابق" style="position: absolute; right: 0; top: 50%; margin-top: -26px; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 5">
+        <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+      </button>
+      <button sc-camel-on-click="{{next}}" aria-label="التصميم التالي" style="position: absolute; left: 0; top: 50%; margin-top: -26px; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 5">
+        <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+      </button>
+    </div>
+
+    <h2 style="margin: 34px 0 0; font-family: 'Alexandria', sans-serif; font-size: 60px; font-weight: 800; text-shadow: 0 14px 30px rgba(0,0,0,0.5)">{{activeName}}</h2>
+    <p style="margin: 14px 0 0; max-width: 560px; text-align: center; font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.7)">{{activeDesc}}</p>
+    <div style="margin-top: 30px; display: flex; align-items: center; gap: 18px">
+      <sc-if value="{{notChosen}}" hint-placeholder-val="{{true}}">
+        <button sc-camel-on-click="{{choose}}" style="height: 50px; padding: 0 34px; border: none; border-radius: 4px; background: #2c2219; color: #ffffff; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 14px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06)">اختر هذا التصميم</button>
+      </sc-if>
+      <sc-if value="{{isChosen}}" hint-placeholder-val="{{false}}">
+        <a href="#contact" style="height: 50px; padding: 0 34px; border-radius: 4px; background: #ffffff; color: #191410; font-size: 15px; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 10px; box-shadow: 0 14px 30px rgba(0,0,0,0.5)">
+          <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#191410" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg>
+          تم — كمّل الطلب
+        </a>
+      </sc-if>
+    </div>
+    <div style="margin-top: 26px; display: flex; gap: 10px">
+      <sc-for list="{{dots}}" as="d" hint-placeholder-count="4">
+        <span style="width: {{d.w}}px; height: 4px; border-radius: 2px; background: {{d.c}}; transition: all .4s ease"></span>
+      </sc-for>
+    </div>
+
+    <a href="#contact" style="position: absolute; left: 72px; bottom: 56px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-decoration: none; color: rgba(255,255,255,0.62)">
+      <span style="writing-mode: vertical-rl; font-size: 11px; letter-spacing: 3px; font-family: 'Alexandria', sans-serif">SCROLL</span>
+      <span style="width: 1px; height: 56px; background: rgba(255,255,255,0.18); position: relative; overflow: hidden"><span class="line" style="position: absolute; inset: 0; background: #ffffff"></span></span>
+    </a>
+    <span style="position: absolute; left: 72px; top: 50%; font-family: 'Alexandria', sans-serif; font-size: 13px; color: rgba(255,255,255,0.45)">.02</span>
+  </section>
+
+  <!-- ============ .03 — CONTACT / ORDER ============ -->
+  <section id="contact" style="position: relative; height: 900px; background: radial-gradient(ellipse 60% 55% at 40% 45%, #372b22, #191410 72%); padding: 0 150px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 80px">
+
+    <div class="reveal" style="width: 480px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
+      <h2 style="margin: 0; font-family: 'Alexandria', sans-serif; font-size: 44px; font-weight: 800">تواصل</h2>
+      <p style="margin: 0; font-size: 16px; line-height: 1.9; color: rgba(255,255,255,0.7)">كمّل البيانات وابعت الطلب على واتساب، ونرد عليك بالسعر وموعد التسليم. لو عندك سؤال قبل الطلب كلمنا مباشرة.</p>
+      <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 10px">
+        <span style="font-size: 15px; font-weight: 700">العنوان</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,0.7)">البحيرة — دمنهور</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span style="font-size: 15px; font-weight: 700">الهاتف</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,0.7)">[رقم الهاتف]</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span style="font-size: 15px; font-weight: 700">واتساب</span>
+        <a href="{{waLink}}" style="font-size: 15px; color: rgba(255,255,255,0.85)">راسلنا الآن</a>
+      </div>
+      <div style="margin-top: 12px; display: flex; gap: 18px; font-size: 14px">
+        <a href="/" style="color: rgba(255,255,255,0.62)">الرئيسية</a>
+        <a href="/flex" style="color: rgba(255,255,255,0.62)">فليكس</a>
+        <a href="/readers" style="color: rgba(255,255,255,0.62)">أجهزة الدخول</a>
+      </div>
+    </div>
+
+    <div class="reveal" style="width: 520px; padding: 44px 48px; box-sizing: border-box; background: #221a14; box-shadow: 0 40px 90px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05); display: flex; flex-direction: column; gap: 26px">
+      <h2 style="margin: 0; text-align: center; font-family: 'Alexandria', sans-serif; font-size: 34px; font-weight: 800">اطلب كارتك</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="fName" style="font-size: 13px; color: rgba(255,255,255,0.62)">الاسم على الكارت</label>
+        <input id="fName" type="text" value="{{name}}" sc-camel-on-change="{{setName}}" placeholder="اسمك" maxlength="28" style="height: 42px; border: none; border-bottom: 1px solid rgba(255,255,255,0.22); background: transparent; color: #ffffff; font-size: 16px; font-family: inherit; outline: none; padding: 0 2px">
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="fLink" style="font-size: 13px; color: rgba(255,255,255,0.62)">الرابط اللي يفتح لما حد يلمس الكارت</label>
+        <input id="fLink" type="text" value="{{link}}" sc-camel-on-change="{{setLink}}" placeholder="instagram.com/… أو رابط موقعك" style="height: 42px; border: none; border-bottom: 1px solid rgba(255,255,255,0.22); background: transparent; color: #ffffff; font-size: 16px; font-family: inherit; outline: none; padding: 0 2px; direction: ltr; text-align: right">
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 13px; color: rgba(255,255,255,0.62)">هتستخدمه لنفسك ولا لناس تانية؟</span>
+        <div style="display: flex; gap: 10px">
+          <sc-for list="{{qtys}}" as="q" hint-placeholder-count="2">
+            <button sc-camel-on-click="{{q.pick}}" style="flex: 1; height: 46px; border-radius: 4px; border: 1px solid {{q.border}}; background: {{q.bg}}; color: {{q.color}}; font-size: 15px; font-weight: 700; cursor: pointer">{{q.label}}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08)">
+        <div style="display: flex; align-items: center; gap: 12px">
+          <div style="width: 46px; height: 29px; border-radius: 5px; background: {{chosenBg}}; box-shadow: 0 6px 14px rgba(0,0,0,0.5)"></div>
+          <span style="font-size: 15px; font-weight: 600">{{chosenName}}</span>
+        </div>
+        <a href="#designs" style="font-size: 14px; color: rgba(255,255,255,0.7)">غيّر التصميم</a>
+      </div>
+
+      <a href="{{waLink}}" style="height: 52px; border-radius: 4px; background: #e8b86b; color: #2a1606; font-size: 16px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 16px 34px rgba(0,0,0,0.5)">
+        أرسل الطلب على واتساب
+        <svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#2a1606" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+      </a>
+      <span style="font-size: 13px; text-align: center; color: rgba(255,255,255,0.6)">السعر يوصلك على واتساب حسب التصميم والعدد.</span>
+    </div>
+
+    <span style="position: absolute; left: 72px; top: 50%; font-family: 'Alexandria', sans-serif; font-size: 13px; color: rgba(255,255,255,0.45)">.03</span>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;كارد لينك&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;20XXXXXXXXXX&quot;},&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:2700}}">
+class Component extends DCLogic {
+  constructor() {
+    super();
+    this.state = { name: '', link: '', active: 0, chosen: -1, qty: 0, img: '' };
+  }
+
+  componentWillUnmount() {
+    if (this._url) URL.revokeObjectURL(this._url);
+  }
+
+  renderVals() {
+    const cms = window.__CMS__ || {};
+    const settings = cms.settings || {};
+    const brandName = settings.brand_name || this.props.brandName || 'كارد لينك';
+    const waNum = String(settings.whatsapp || this.props.whatsapp || '20XXXXXXXXXX').replace(/[^0-9]/g, '');
+    const s = this.state;
+    const words = brandName.split(' ');
+
+    const nameDisplay = s.name.trim() || 'اسمك';
+    const len = nameDisplay.length;
+    const nameSize = len <= 6 ? 190 : len <= 10 ? 140 : len <= 16 ? 100 : 76;
+
+    const designs = (cms.personalDesigns && cms.personalDesigns.length) ? cms.personalDesigns : [
+      { name: 'أسود مطفي', desc: 'هادي وواثق — اسمك بالأبيض على أسود مطفي يناسب أي بدلة أو محفظة.', bg: 'linear-gradient(135deg, #2a2c31, #0c0d0f)', fg: '#ffffff', sub: 'rgba(255,255,255,0.62)', shine: 'rgba(255,255,255,0.12)' },
+      { name: 'أبيض كلاسيك', desc: 'نظيف وبسيط — الشكل الأوضح للاسم والبيانات.', bg: 'linear-gradient(135deg, #ffffff, #e4e7ea)', fg: '#1b1f24', sub: 'rgba(27,31,36,0.62)', shine: 'rgba(255,255,255,0.9)' },
+      { name: 'ذهبي', desc: 'لمعة فخمة تلفت النظر من أول مرة يطلع فيها الكارت.', bg: 'linear-gradient(135deg, #f3dc92, #c99c46 60%, #e7c878)', fg: '#3b2a0c', sub: 'rgba(59,42,12,0.7)', shine: 'rgba(255,255,255,0.55)' },
+      { name: 'أخضر زمردي', desc: 'لون مختلف وهادي لمن يحب يتميز من غير مبالغة.', bg: 'linear-gradient(135deg, #138a7e, #0a4a45)', fg: '#eafff9', sub: 'rgba(234,255,249,0.7)', shine: 'rgba(255,255,255,0.2)' }
+    ];
+    if (s.active >= designs.length) s.active = 0;
+    if (s.chosen >= designs.length) s.chosen = -1;
+    const n = designs.length;
+    const slides = designs.map((d, i) => {
+      const off = (i - s.active + n) % n;
+      let tf = 'translateX(0px) scale(0.5)', blur = 'blur(6px)', op = 0, z = 1;
+      if (off === 0) { tf = 'translateX(0px) scale(1)'; blur = 'blur(0px)'; op = 1; z = 3; }
+      else if (off === 1) { tf = 'translateX(-390px) scale(0.68)'; blur = 'blur(3px)'; op = 0.5; z = 2; }
+      else if (off === n - 1) { tf = 'translateX(390px) scale(0.68)'; blur = 'blur(3px)'; op = 0.5; z = 2; }
+      return { ...d, tf, blur, op, z };
+    });
+    const dots = designs.map((d, i) => ({ w: i === s.active ? 28 : 10, c: i === s.active ? '#ffffff' : 'rgba(255,255,255,0.25)' }));
+
+    const chosenIdx = s.chosen < 0 ? s.active : s.chosen;
+    const chosen = designs[chosenIdx];
+
+    const qtyLabels = ['كارت واحد', 'ليّا ولناس تانية'];
+    const qtys = qtyLabels.map((q, i) => ({
+      label: q,
+      border: i === s.qty ? '#e8b86b' : 'rgba(255,255,255,0.18)',
+      bg: i === s.qty ? 'rgba(232,184,107,0.12)' : 'transparent',
+      color: i === s.qty ? '#f6e3c2' : 'rgba(255,255,255,0.72)',
+      pick: () => this.setState({ qty: i })
+    }));
+
+    const msg = 'مرحباً، أريد كارت شخصي ذكي'
+      + '\nالاسم على الكارت: ' + (s.name.trim() || '—')
+      + '\nالتصميم: ' + chosen.name
+      + '\nالعدد: ' + qtyLabels[s.qty]
+      + '\nالرابط: ' + (s.link.trim() || '—')
+      + (s.img ? '\nالصورة: سأرسلها هنا' : '');
+    const waLink = 'https://wa.me/' + waNum + '?text=' + encodeURIComponent(msg);
+
+    return {
+      brandName,
+      brandWord1: words[0] || brandName,
+      brandWord2: words.slice(1).join(' '),
+      name: s.name, link: s.link, nameDisplay, nameSize,
+      setName: (e) => this.setState({ name: e.target.value }),
+      setLink: (e) => this.setState({ link: e.target.value }),
+      slides, dots,
+      activeName: designs[s.active].name,
+      activeDesc: designs[s.active].desc,
+      next: () => this.setState({ active: (s.active + 1) % n }),
+      prev: () => this.setState({ active: (s.active - 1 + n) % n }),
+      choose: () => this.setState({ chosen: s.active }),
+      isChosen: s.chosen === s.active, notChosen: s.chosen !== s.active,
+      chosenName: chosen.name, chosenBg: chosen.bg,
+      qtys, waLink,
+      img: s.img, hasImg: !!s.img, noImg: !s.img,
+      avatarLabel: s.img ? 'غيّر صورتك' : 'أضف صورتك',
+      onUpload: (e) => {
+        const f = e.target.files && e.target.files[0];
+        e.target.value = '';
+        if (!f || !/^image\//.test(f.type)) return;
+        if (this._url) URL.revokeObjectURL(this._url);
+        this._url = URL.createObjectURL(f);
+        this.setState({ img: this._url });
+      }
+    };
+  }
+}
+</script>
+
+
+<script src="/static/js/leads.js"></script>
+</body></html>

@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% from "partials/nfc_card.html" import nfc_card %}
+{% block title %}كارلينك — بطاقتك الذكية بتصميم مستقبلي{% endblock %}
+{% block body_class %}site{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-copy reveal">
+    <span class="chip">
+      <i></i>
+      <b data-ar="تقنية NFC + QR مدمجة" data-en="Built-in NFC + QR">تقنية NFC + QR مدمجة</b>
+    </span>
+    <h1>
+      <span data-ar="بطاقتك الذكية" data-en="Your smart card">بطاقتك الذكية</span><br>
+      <em data-ar="بتصميم مستقبلي" data-en="with a future-ready look">بتصميم مستقبلي</em>
+    </h1>
+    <p data-ar="بطاقات PVC احترافية بتقنية NFC و QR Code لتحويل العضوية والهوية إلى تجربة رقمية متكاملة." data-en="Professional PVC cards with NFC and QR Code that turn membership and identity into one digital experience.">
+      بطاقات PVC احترافية بتقنية NFC و QR Code لتحويل العضوية والهوية إلى تجربة رقمية متكاملة.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-cyan" href="#design" data-ar="اطلب الآن" data-en="Order now">اطلب الآن</a>
+      <a class="btn-ghost" href="#design" data-ar="صمم بطاقتك" data-en="Design your card">صمم بطاقتك</a>
+    </div>
+  </div>
+  <div class="hero-stage reveal">
+    {{ nfc_card(spin="auto") }}
+  </div>
+</section>
+
+<section class="stats">
+  <div><strong data-count="1000">+1,000</strong><span data-ar="بطاقة مصنوعة" data-en="Cards produced">بطاقة مصنوعة</span></div>
+  <div><strong>NFC + QR</strong><span data-ar="تقنية مزدوجة" data-en="Dual technology">تقنية مزدوجة</span></div>
+  <div><strong>PVC</strong><span data-ar="خامات عالية الجودة" data-en="Premium material">خامات عالية الجودة</span></div>
+  <div><strong>24/7</strong><span data-ar="دعم فني" data-en="Support">دعم فني</span></div>
+</section>
+
+<section class="viewer" id="card">
+  <p class="eyebrow" data-ar="اقترب من البطاقة" data-en="Get closer">اقترب من البطاقة</p>
+  <h2 data-ar="مرنة ومتينة — شاهد بنفسك" data-en="Flexible and durable — see it yourself">مرنة ومتينة — شاهد بنفسك</h2>
+  <p class="lede" data-ar="بطاقات PVC تتحمل الانحناء — اضغط على الأسهم لمشاهدة البطاقة من كل زاوية" data-en="PVC cards that handle the bend — use the arrows to view every angle">
+    بطاقات PVC تتحمل الانحناء — اضغط على الأسهم لمشاهدة البطاقة من كل زاوية
+  </p>
+  <div class="viewer-frame">
+    <button type="button" class="orb" data-angle-prev aria-label="السابق">‹</button>
+    {{ nfc_card(spin="orbit") }}
+    <button type="button" class="orb" data-angle-next aria-label="التالي">›</button>
+  </div>
+  <div class="dots" data-angle-dots>
+    <button type="button" class="is-on" aria-label="1"></button>
+    <button type="button" aria-label="2"></button>
+    <button type="button" aria-label="3"></button>
+    <button type="button" aria-label="4"></button>
+  </div>
+  <div class="soft-pill">
+    <span></span>
+    <b data-ar="PVC مرن عالي الجودة — يتحمل الانحناء والاستخدام اليومي" data-en="Flexible premium PVC — built for daily use">PVC مرن عالي الجودة — يتحمل الانحناء والاستخدام اليومي</b>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <p class="eyebrow" data-ar="لماذا بطاقتنا؟" data-en="Why our card?">لماذا بطاقتنا؟</p>
+  <h2 data-ar="الحل الذكي لكل مؤسسة" data-en="The smart solution for every organization">الحل الذكي لكل مؤسسة</h2>
+  <p class="lede" data-ar="بطاقات احترافية تجمع بين التصميم العصري والتقنية الذكية — مناسبة لكل القطاعات" data-en="Professional cards that mix a modern look with smart tech — made for every sector">
+    بطاقات احترافية تجمع بين التصميم العصري والتقنية الذكية — مناسبة لكل القطاعات
+  </p>
+  <div class="feature-grid">
+    <article class="tile reveal">
+      <i class="ico person"></i>
+      <h3 data-ar="بطاقات العضوية" data-en="Membership cards">بطاقات العضوية</h3>
+      <p data-ar="للنوادي الرياضية والاجتماعية — بطاقة عضو يمكن من خلالها تسجيل الحضور والوصول للخدمات." data-en="For sports and social clubs — one member card for check-in and access.">للنوادي الرياضية والاجتماعية — بطاقة عضو يمكن من خلالها تسجيل الحضور والوصول للخدمات.</p>
+    </article>
+    <article class="tile reveal">
+      <i class="ico gift"></i>
+      <h3 data-ar="بطاقات الولاء" data-en="Loyalty cards">بطاقات الولاء</h3>
+      <p data-ar="للمتاجر والمطاعم والكافيهات — بطاقة تتبع النقاط والمكافآت تلقائياً عبر المسح." data-en="For shops, restaurants and cafes — points and rewards update on every scan.">للمتاجر والمطاعم والكافيهات — بطاقة تتبع النقاط والمكافآت تلقائياً عبر المسح.</p>
+    </article>
+    <article class="tile reveal">
+      <i class="ico id"></i>
+      <h3 data-ar="بطاقات الهوية" data-en="ID cards">بطاقات الهوية</h3>
+      <p data-ar="للمدارس والشركات والمؤسسات — بطاقة تعريف احترافية مع صورة وبيانات مشفرة." data-en="For schools and companies — a professional ID with a photo and secure data.">للمدارس والشركات والمؤسسات — بطاقة تعريف احترافية مع صورة وبيانات مشفرة.</p>
+    </article>
+    <article class="tile reveal">
+      <i class="ico tag"></i>
+      <h3 data-ar="سعر تنافسي" data-en="Fair pricing">سعر تنافسي</h3>
+      <p data-ar="أسعار جملة تبدأ من 1,000 بطاقة — أقل تكلفة على جودة البطاقة والخامات." data-en="Wholesale from 1,000 cards — lower cost without dropping quality.">أسعار جملة تبدأ من 1,000 بطاقة — أقل تكلفة على جودة البطاقة والخامات.</p>
+    </article>
+    <article class="tile reveal">
+      <i class="ico shield"></i>
+      <h3 data-ar="تصميم مخصص" data-en="Custom design">تصميم مخصص</h3>
+      <p data-ar="صمم بطاقتك بنفسك أو اختر من قوالبنا الجاهزة — شعارك وألوانك بالضبط." data-en="Design it yourself or pick a ready template — your logo and colors, exactly.">صمم بطاقتك بنفسك أو اختر من قوالبنا الجاهزة — شعارك وألوانك بالضبط.</p>
+    </article>
+    <article class="tile reveal">
+      <i class="ico bolt"></i>
+      <h3 data-ar="تسليم سريع" data-en="Fast delivery">تسليم سريع</h3>
+      <p data-ar="من التصميم للطباعة للتوصيل — نسلم طلبك في وقت قياسي من مكان مقرنا." data-en="From design to print to delivery — we ship on a tight timeline.">من التصميم للطباعة للتوصيل — نسلم طلبك في وقت قياسي من مكان مقرنا.</p>
+    </article>
+  </div>
+  <div class="tags">
+    <span data-ar="مناسبة لكل:" data-en="Made for:">مناسبة لكل:</span>
+    <b data-ar="النوادي الرياضية" data-en="Sports clubs">النوادي الرياضية</b>
+    <b data-ar="المدارس" data-en="Schools">المدارس</b>
+    <b data-ar="الشركات" data-en="Companies">الشركات</b>
+    <b data-ar="المطاعم والكافيهات" data-en="Cafes">المطاعم والكافيهات</b>
+    <b data-ar="الفنادق" data-en="Hotels">الفنادق</b>
+    <b data-ar="العيادات" data-en="Clinics">العيادات</b>
+  </div>
+</section>
+
+<section class="designer" id="design">
+  <p class="eyebrow" data-ar="اطلب بطاقتك" data-en="Order your card">اطلب بطاقتك</p>
+  <h2 data-ar="صمّم واطلب في 4 خطوات" data-en="Design and order in 4 steps">صمّم واطلب في 4 خطوات</h2>
+  <p class="lede" data-ar="اختر القالب، ارفع شعارك، حدد الكمية والتفاصيل — وتوصيلك" data-en="Pick a template, add your logo, set the quantity — we deliver">
+    اختر القالب، ارفع شعارك، حدد الكمية والتفاصيل — وتوصيلك
+  </p>
+  <ol class="steps" data-steps>
+    <li class="is-on">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ol>
+
+  <form class="board" method="post" action="{{ url_for('main.order') }}" data-designer>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="template" value="classic" data-template-input>
+
+    <div class="board-top">
+      <h3 data-step-title>اختر قالب البطاقة</h3>
+      <div class="board-nav">
+        <button type="button" class="btn-ghost" data-prev hidden data-ar="السابق" data-en="Back">السابق</button>
+        <button type="button" class="btn-cyan" data-next data-ar="التالي" data-en="Next">التالي</button>
+        <button type="submit" class="btn-cyan" data-submit hidden data-ar="إرسال الطلب" data-en="Send order">إرسال الطلب</button>
+      </div>
+    </div>
+
+    <div class="board-body">
+      <div class="preview-pad">
+        {{ nfc_card(logo="[YOUR LOGO]", since="2024", spin="idle") }}
+      </div>
+
+      <div class="step-pane is-on" data-pane="1">
+        <div class="swatch-list">
+          <button type="button" class="skin is-on" data-skin="classic"><span class="skin-classic"></span><b data-ar="كلاسيك أبيض" data-en="Classic white">كلاسيك أبيض</b></button>
+          <button type="button" class="skin" data-skin="black"><span class="skin-black"></span><b data-ar="معدني أسود" data-en="Metal black">معدني أسود</b></button>
+          <button type="button" class="skin" data-skin="gold"><span class="skin-gold"></span><b data-ar="ذهبي فخم" data-en="Luxury gold">ذهبي فخم</b></button>
+          <button type="button" class="skin" data-skin="navy"><span class="skin-navy"></span><b data-ar="أزرق راقي" data-en="Deep navy">أزرق راقي</b></button>
+        </div>
+      </div>
+
+      <div class="step-pane" data-pane="2">
+        <label data-ar="اسم العلامة" data-en="Brand name">اسم العلامة</label>
+        <input name="brand" type="text" maxlength="40" value="كارلينك" required>
+        <label data-ar="نص الشعار" data-en="Logo text">نص الشعار</label>
+        <input name="logo" type="text" maxlength="24" value="[YOUR LOGO]">
+        <label data-ar="سنة العضوية" data-en="Member since">سنة العضوية</label>
+        <input name="since" type="text" maxlength="4" value="2024">
+      </div>
+
+      <div class="step-pane" data-pane="3">
+        <label data-ar="الكمية" data-en="Quantity">الكمية</label>
+        <input name="quantity" type="number" min="50" max="100000" value="1000" required>
+        <label data-ar="رقم التواصل" data-en="Phone">رقم التواصل</label>
+        <input name="phone" type="text" maxlength="30" placeholder="[YOUR PHONE]" required>
+        <label data-ar="ملاحظات" data-en="Notes">ملاحظات</label>
+        <input name="notes" type="text" maxlength="200" placeholder="الألوان، التوصيل، التفاصيل">
+      </div>
+
+      <div class="step-pane" data-pane="4">
+        <ul class="review">
+          <li><span data-ar="القالب" data-en="Template">القالب</span><strong data-review="template">كلاسيك أبيض</strong></li>
+          <li><span data-ar="الاسم" data-en="Name">الاسم</span><strong data-review="brand">كارلينك</strong></li>
+          <li><span data-ar="الكمية" data-en="Qty">الكمية</span><strong data-review="qty">1000</strong></li>
+          <li><span data-ar="الهاتف" data-en="Phone">الهاتف</span><strong data-review="phone">—</strong></li>
+        </ul>
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="clients" id="work">
+  <p class="eyebrow" data-ar="شركاؤنا" data-en="Partners">شركاؤنا</p>
+  <h2 data-ar="يثقون بنا" data-en="They trust us">يثقون بنا</h2>
+  <p class="lede" data-ar="مؤسسات ونوادي ومدارس اختارت بطاقاتنا الذكية" data-en="Clubs, schools and companies that chose our smart cards">
+    مؤسسات ونوادي ومدارس اختارت بطاقاتنا الذكية
+  </p>
+  <div class="client-grid">
+    <div><i class="ico clock"></i><span data-ar="[اسم النادي]" data-en="[Club name]">[اسم النادي]</span></div>
+    <div><i class="ico id"></i><span data-ar="[اسم المدرسة]" data-en="[School name]">[اسم المدرسة]</span></div>
+    <div><i class="ico bag"></i><span data-ar="[اسم الشركة]" data-en="[Company name]">[اسم الشركة]</span></div>
+    <div><i class="ico cup"></i><span data-ar="[اسم الكافيه]" data-en="[Cafe name]">[اسم الكافيه]</span></div>
+    <div><i class="ico home"></i><span data-ar="[اسم الفندق]" data-en="[Hotel name]">[اسم الفندق]</span></div>
+    <div><i class="ico bolt"></i><span data-ar="[اسم العيادة]" data-en="[Clinic name]">[اسم العيادة]</span></div>
+    <div><i class="ico globe"></i><span data-ar="[اسم المركز]" data-en="[Center name]">[اسم المركز]</span></div>
+    <div><i class="ico stack"></i><span data-ar="[اسم الجامعة]" data-en="[University name]">[اسم الجامعة]</span></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <p class="eyebrow" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</p>
+  <h2 data-ar="جاهزين نساعدك تبدأ" data-en="Ready when you are">جاهزين نساعدك تبدأ</h2>
+  <div class="contact-row">
+    <a class="phone" href="tel:+000000000">
+      <i class="ico phone"></i>
+      <span>[YOUR PHONE]</span>
+      <small data-ar="الهاتف" data-en="Phone">الهاتف</small>
+    </a>
+    <div class="social">
+      <a href="#" aria-label="Facebook">f</a>
+      <a href="#" aria-label="Instagram">◎</a>
+      <a href="#" aria-label="WhatsApp">✆</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block footer %}{% endblock %}

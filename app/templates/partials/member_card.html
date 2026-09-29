@@ -1,0 +1,73 @@
+{# p: dict from present_card(). mode: "flip" or "back". #}
+{% macro render_card(p, mode="flip", flipped=false) -%}
+{% if mode == "flip" %}
+<div class="card-scene{% if flipped %} is-flipped{% endif %}" data-card data-tier="{{ p.tier }}" data-accent="{{ p.accent }}">
+  <div class="card-float">
+    <div class="card-rig">
+      <div class="card-inner">
+        {{ _front(p) }}
+        {{ _back(p) }}
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="card-scene is-back-only" data-tilt data-tier="{{ p.tier }}" data-accent="{{ p.accent }}">
+  <div class="card-float">
+    <div class="card-rig">
+      {{ _back(p) }}
+    </div>
+  </div>
+</div>
+{% endif %}
+{%- endmacro %}
+
+{% macro _front(p) -%}
+<article class="face face-front">
+  <div class="face-stripes" aria-hidden="true"></div>
+  <div class="brand-lockup">
+    <img class="pulse-mark" src="{{ url_for('static', filename='img/pulse.svg') }}" alt="">
+    <div>
+      <div class="wordmark">PULSE</div>
+      <div class="wordmark-sub">ATHLETIC CLUB</div>
+    </div>
+  </div>
+  <p class="tagline">MOVE. SWEAT. REPEAT.</p>
+  <div class="tier-pill" data-bind="tier-label">{{ p.tier_label }}</div>
+  <div class="front-fields">
+    <div class="fld-label">MEMBER NAME</div>
+    <div class="fld-value name" data-bind="name">{{ p.name }}</div>
+    <div class="front-split">
+      <div>
+        <div class="fld-label">MEMBER NO.</div>
+        <div class="fld-value" data-bind="number">{{ p.member_no }}</div>
+      </div>
+      <div>
+        <div class="fld-label">VALID THRU</div>
+        <div class="fld-value" data-bind="valid">{{ p.valid }}</div>
+      </div>
+    </div>
+  </div>
+</article>
+{%- endmacro %}
+
+{% macro _back(p) -%}
+<article class="face face-back">
+  <header class="back-head">
+    <div class="back-brand"><strong>PULSE</strong> <span>ATHLETIC CLUB</span></div>
+    <div class="face-stripes back-stripes" aria-hidden="true"></div>
+  </header>
+  <div class="back-body">
+    <div class="benefits-title" data-bind="benefits-title">{{ p.benefits_title }}</div>
+    <ul class="benefits" data-bind="benefits">
+      {% for item in p.benefits %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    <div class="qr-box" aria-hidden="true">[QR]</div>
+    <div class="sig-bar"><span>AUTHORIZED SIGNATURE</span></div>
+    <p class="legal">Non-transferable. Present at reception on every visit. If found, please return to any PULSE club.</p>
+    <div class="contact">[WEBSITE]<br>[PHONE]</div>
+  </div>
+</article>
+{%- endmacro %}

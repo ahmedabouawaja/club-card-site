@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% block title %}لوحة المحتوى — كارد لينك{% endblock %}
+{% block body_class %}app cms-body{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cms.css') }}">
+
+<section class="cms">
+  <header class="cms-head">
+    <div>
+      <p class="cms-kicker">لوحة مخفية — للأدمن فقط</p>
+      <h1>إدارة محتوى الموقع</h1>
+      <p>زوّد أو امسح أو عدّل — الموقع بيتحدّث تلقائي.</p>
+    </div>
+    <div class="cms-links">
+      <a href="{{ url_for('admin.leads') }}">الطلبات</a>
+      <a href="{{ url_for('admin.dashboard') }}">البطاقات</a>
+      <a href="{{ url_for('main.index') }}" target="_blank">فتح الموقع ↗</a>
+    </div>
+  </header>
+
+  <nav class="cms-tabs" aria-label="أقسام المحتوى">
+    <a href="#settings" class="is-on" data-cms-tab="settings">إعدادات</a>
+    {% for key, label in kinds.items() %}
+      <a href="{{ url_for('admin.content', kind=key) }}" class="{% if kind == key %}is-on{% endif %}" data-cms-tab="items">{{ label }}</a>
+    {% endfor %}
+  </nav>
+
+  <section id="settings" class="cms-panel">
+    <h2>إعدادات عامة</h2>
+    <p class="cms-help">رقم واتساب، اسم البراند، نصوص الهيرو وأسعار فليكس.</p>
+    <form method="post" action="{{ url_for('admin.content_settings') }}" class="cms-form grid">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="return_kind" value="{{ kind }}">
+      <label>اسم البراند
+        <input name="brand_name" value="{{ settings.brand_name }}" maxlength="80" required>
+      </label>
+      <label>واتساب (مع كود الدولة)
+        <input name="whatsapp" value="{{ settings.whatsapp }}" maxlength="20" dir="ltr" required>
+      </label>
+      <label>سطر فوق العنوان
+        <input name="hero_kicker" value="{{ settings.hero_kicker }}" maxlength="120">
+      </label>
+      <label>عنوان الهيرو (سطر جديد بـ Enter)
+        <textarea name="hero_title" rows="2">{{ settings.hero_title }}</textarea>
+      </label>
+      <label class="span-2">وصف الهيرو
+        <textarea name="hero_text" rows="3">{{ settings.hero_text }}</textarea>
+      </label>
+      <label>عنوان فليكس
+        <input name="flex_title" value="{{ settings.flex_title }}" maxlength="160">
+      </label>
+      <label>سعر فليكس
+        <input name="flex_price" value="{{ settings.flex_price }}" maxlength="40">
+      </label>
+      <label class="span-2">وصف فليكس
+        <textarea name="flex_lede" rows="2">{{ settings.flex_lede }}</textarea>
+      </label>
+      <label class="span-2">ملاحظة السعر
+        <input name="flex_price_note" value="{{ settings.flex_price_note }}" maxlength="200">
+      </label>
+      <label>سطر صفحة الأفراد
+        <input name="personal_tagline" value="{{ settings.personal_tagline }}" maxlength="160">
+      </label>
+      <label>عنوان أجهزة الدخول
+        <input name="readers_headline" value="{{ settings.readers_headline }}" maxlength="80">
+      </label>
+      <label class="span-2">وصف أجهزة الدخول
+        <input name="readers_text" value="{{ settings.readers_text }}" maxlength="200">
+      </label>
+      <div class="span-2">
+        <button type="submit" class="cms-btn">حفظ الإعدادات</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="cms-panel">
+    <div class="cms-panel-top">
+      <div>
+        <h2>{{ kinds[kind] }}</h2>
+        <p class="cms-help">
+          {% if kind == 'design' %}ألوان وأشكال الكروت الظاهرة للزائر.{% endif %}
+          {% if kind == 'use' %}كروت الاستخدام في الصفحة الرئيسية.{% endif %}
+          {% if kind == 'hero_chip' %}الأزرار اللي بتظهر التصميمات في الهيرو. حقل «رقم الشكل» = ترتيب الشكل من 0.{% endif %}
+          {% if kind == 'order_type' %}أنواع الطلب. في حقل التفاصيل اكتب الأحجام مفصولة بـ | مثل: من 50|250 فأكثر{% endif %}
+          {% if kind == 'flex_use' %}اختيارات الاستخدام في صفحة فليكس.{% endif %}
+          {% if kind == 'faq' %}أسئلة صفحة فليكس.{% endif %}
+          {% if kind == 'review' %}تقييمات فليكس.{% endif %}
+          {% if kind == 'place' %}أماكن أجهزة الدخول. حقل إضافي = اسم الشريحة.{% endif %}
+        </p>
+      </div>
+    </div>
+
+    <form method="post" action="{{ url_for('admin.content_item_create') }}" class="cms-form add-box">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="kind" value="{{ kind }}">
+      <h3>إضافة جديد</h3>
+      <div class="grid">
+        <label>العنوان
+          <input name="title" required maxlength="160" placeholder="مثال: جيم أو نادي">
+        </label>
+        <label>الصفحة
+          <select name="page">
+            <option value="">—</option>
+            {% for p in pages %}
+              <option value="{{ p }}">{{ p }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label class="span-2">سطر فرعي / وصف قصير
+          <input name="subtitle" maxlength="255">
+        </label>
+        <label class="span-2">تفاصيل / إجابة / أحجام
+          <textarea name="body" rows="2"></textarea>
+        </label>
+        {% if kind == 'design' %}
+        <label>لون ١ <input name="color_a" type="color" value="#e8b86b"></label>
+        <label>لون ٢ <input name="color_b" type="color" value="#c99c46"></label>
+        <label>لون الكلام <input name="text_color" type="color" value="#2a1606"></label>
+        {% endif %}
+        {% if kind == 'hero_chip' %}
+        <label>رقم الشكل (0 وطلع) <input name="icon" placeholder="0" dir="ltr"></label>
+        <label>رقم نوع الطلب <input name="meta" placeholder="0" dir="ltr"></label>
+        {% endif %}
+        {% if kind in ['use','order_type','place'] %}
+        <label class="span-2">أيقونة SVG path (اختياري)
+          <input name="icon" dir="ltr" placeholder="M6 7v10…">
+        </label>
+        {% endif %}
+        {% if kind == 'place' %}
+        <label>اسم الشريحة <input name="meta" placeholder="جيم"></label>
+        {% endif %}
+        <div class="span-2">
+          <button type="submit" class="cms-btn">إضافة</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="cms-list">
+      {% for item in items %}
+      <article class="cms-card {% if not item.is_active %}is-off{% endif %}">
+        <form method="post" action="{{ url_for('admin.content_item_update', item_id=item.id) }}" class="cms-form">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <div class="cms-card-top">
+            <strong>#{{ item.id }} · {{ item.page or '—' }}</strong>
+            <div class="cms-actions">
+              <button type="submit" name="action" value="up" title="اطلع فوق">↑</button>
+              <button type="submit" name="action" value="down" title="انزل تحت">↓</button>
+              <button type="submit" name="action" value="toggle">{{ 'إخفاء' if item.is_active else 'إظهار' }}</button>
+              <button type="submit" name="action" value="delete" class="danger" onclick="return confirm('نمسح العنصر؟')">حذف</button>
+            </div>
+          </div>
+          <div class="grid">
+            <label>العنوان <input name="title" value="{{ item.title }}" required maxlength="160"></label>
+            <label>الصفحة
+              <select name="page">
+                <option value="">—</option>
+                {% for p in pages %}
+                  <option value="{{ p }}" {% if item.page == p %}selected{% endif %}>{{ p }}</option>
+                {% endfor %}
+              </select>
+            </label>
+            <label class="span-2">سطر فرعي <input name="subtitle" value="{{ item.subtitle or '' }}" maxlength="255"></label>
+            <label class="span-2">تفاصيل <textarea name="body" rows="2">{{ item.body or '' }}</textarea></label>
+            {% if kind == 'design' %}
+            <label>لون ١ <input name="color_a" type="color" value="{{ item.color_a or '#e8b86b' }}"></label>
+            <label>لون ٢ <input name="color_b" type="color" value="{{ item.color_b or '#c99c46' }}"></label>
+            <label>لون الكلام <input name="text_color" type="color" value="{{ item.text_color or '#2a1606' }}"></label>
+            {% else %}
+            <input type="hidden" name="color_a" value="{{ item.color_a or '' }}">
+            <input type="hidden" name="color_b" value="{{ item.color_b or '' }}">
+            <input type="hidden" name="text_color" value="{{ item.text_color or '' }}">
+            {% endif %}
+            <label>أيقونة / رقم الشكل <input name="icon" value="{{ item.icon or '' }}" dir="ltr"></label>
+            <label>إضافي <input name="meta" value="{{ item.meta or '' }}"></label>
+            <div class="span-2">
+              <button type="submit" name="action" value="save" class="cms-btn ghost">حفظ التعديل</button>
+            </div>
+          </div>
+        </form>
+      </article>
+      {% else %}
+      <p class="cms-empty">مفيش عناصر هنا — ضيف من الفورم فوق.</p>
+      {% endfor %}
+    </div>
+  </section>
+</section>
+{% endblock %}

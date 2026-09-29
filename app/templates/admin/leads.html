@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+{% block title %}الطلبات — كارد لينك{% endblock %}
+{% block body_class %}app cms-body{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cms.css') }}">
+
+<section class="cms leads-page">
+  <header class="cms-head">
+    <div>
+      <p class="cms-kicker">لوحة الأدمن</p>
+      <h1>طلبات التصميم والتوصيل</h1>
+      <p>كل طلب من استوديو الكارت: اللون، الإضافات، الصورة، الكمية، والعنوان — تواصل وغيّر الحالة.</p>
+    </div>
+    <div class="cms-links">
+      <a href="{{ url_for('admin.content') }}">المحتوى</a>
+      <a href="{{ url_for('admin.dashboard') }}">البطاقات</a>
+      <a href="{{ url_for('main.index') }}#studio" target="_blank">صفحة الطلب ↗</a>
+    </div>
+  </header>
+
+  <div class="lead-stats" aria-label="ملخص الطلبات">
+    <div class="lead-stat">
+      <strong>{{ stats.new }}</strong>
+      <span>جديد</span>
+    </div>
+    <div class="lead-stat">
+      <strong>{{ stats.order }}</strong>
+      <span>طلب كارت</span>
+    </div>
+    <div class="lead-stat">
+      <strong>{{ stats.contacted }}</strong>
+      <span>تم التواصل</span>
+    </div>
+    <div class="lead-stat">
+      <strong>{{ stats.all }}</strong>
+      <span>الإجمالي</span>
+    </div>
+  </div>
+
+  <nav class="cms-tabs lead-filters" aria-label="تصفية الطلبات">
+    <a href="{{ url_for('admin.leads', kind='all', status=filter_status) }}" class="{% if filter_kind == 'all' %}is-on{% endif %}">الكل</a>
+    <a href="{{ url_for('admin.leads', kind='order', status=filter_status) }}" class="{% if filter_kind == 'order' %}is-on{% endif %}">طلب كارت</a>
+    <a href="{{ url_for('admin.leads', kind='callback', status=filter_status) }}" class="{% if filter_kind == 'callback' %}is-on{% endif %}">مكالمة</a>
+    <a href="{{ url_for('admin.leads', kind='personal', status=filter_status) }}" class="{% if filter_kind == 'personal' %}is-on{% endif %}">شخصي</a>
+    <a href="{{ url_for('admin.leads', kind='reader', status=filter_status) }}" class="{% if filter_kind == 'reader' %}is-on{% endif %}">قارئ</a>
+    <a href="{{ url_for('admin.leads', kind='quote', status=filter_status) }}" class="{% if filter_kind == 'quote' %}is-on{% endif %}">عرض سعر</a>
+  </nav>
+  <nav class="cms-tabs lead-filters lead-filters-status" aria-label="تصفية الحالة">
+    <a href="{{ url_for('admin.leads', kind=filter_kind, status='all') }}" class="{% if filter_status == 'all' %}is-on{% endif %}">كل الحالات</a>
+    <a href="{{ url_for('admin.leads', kind=filter_kind, status='new') }}" class="{% if filter_status == 'new' %}is-on{% endif %}">جديد</a>
+    <a href="{{ url_for('admin.leads', kind=filter_kind, status='contacted') }}" class="{% if filter_status == 'contacted' %}is-on{% endif %}">تم التواصل</a>
+    <a href="{{ url_for('admin.leads', kind=filter_kind, status='closed') }}" class="{% if filter_status == 'closed' %}is-on{% endif %}">مغلق</a>
+  </nav>
+
+  {% if leads %}
+  <div class="lead-list">
+    {% for lead in leads %}
+    <article class="lead-card {% if lead.status == 'new' %}is-new{% endif %} {% if lead.kind == 'order' %}is-order{% endif %}">
+      <header class="lead-card-top">
+        <div class="lead-card-meta">
+          <span class="lead-kind {% if lead.kind == 'order' %}is-order{% endif %}">{{ lead.kind_label }}</span>
+          <span class="lead-id">#{{ lead.id }}</span>
+          <time datetime="{{ lead.created_at.isoformat() }}">{{ lead.created_at.strftime("%Y-%m-%d") }} · {{ lead.created_at.strftime("%H:%M") }}</time>
+        </div>
+        <form method="post" action="{{ url_for('admin.lead_status', lead_id=lead.id) }}" class="inline-form lead-status-form">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <input type="hidden" name="filter_kind" value="{{ filter_kind }}">
+          <input type="hidden" name="filter_status" value="{{ filter_status }}">
+          <select name="status" onchange="this.form.submit()" aria-label="حالة الطلب">
+            <option value="new" {% if lead.status == 'new' %}selected{% endif %}>جديد</option>
+            <option value="contacted" {% if lead.status == 'contacted' %}selected{% endif %}>تم التواصل</option>
+            <option value="closed" {% if lead.status == 'closed' %}selected{% endif %}>مغلق</option>
+          </select>
+        </form>
+      </header>
+
+      <div class="lead-card-grid">
+        <section class="lead-block">
+          <h3>التواصل</h3>
+          <div class="lead-details">
+            {% if lead.print_name %}
+              <div><b>{% if lead.kind == 'order' %}النص على الكارت:{% else %}الاسم:{% endif %}</b> {{ lead.print_name }}</div>
+            {% endif %}
+            <div class="lead-contact-row">
+              <b>موبايل:</b>
+              {% if lead.tel_url %}
+                <a href="{{ lead.tel_url }}" dir="ltr">{{ lead.phone }}</a>
+              {% else %}
+                <span>{{ lead.phone or "—" }}</span>
+              {% endif %}
+            </div>
+            {% if lead.whatsapp %}
+              <div class="lead-contact-row">
+                <b>واتساب:</b>
+                <span dir="ltr">{{ lead.whatsapp }}</span>
+                {% if lead.wa_url %}
+                  <a class="lead-wa" href="{{ lead.wa_url }}" target="_blank" rel="noopener">فتح واتساب</a>
+                {% endif %}
+              </div>
+            {% elif lead.wa_url %}
+              <div class="lead-contact-row">
+                <a class="lead-wa" href="{{ lead.wa_url }}" target="_blank" rel="noopener">واتساب</a>
+              </div>
+            {% endif %}
+            {% if lead.address %}<div><b>العنوان:</b> {{ lead.address }}</div>{% endif %}
+            {% if lead.link %}<div><b>الرابط:</b> <a href="{{ lead.link }}" target="_blank" rel="noopener" dir="ltr">{{ lead.link }}</a></div>{% endif %}
+            {% if lead.line2 %}<div><b>سطر 2:</b> {{ lead.line2 }}</div>{% endif %}
+            {% if lead.line3 %}<div><b>سطر 3:</b> {{ lead.line3 }}</div>{% endif %}
+          </div>
+        </section>
+
+        <section class="lead-block">
+          <h3>التصميم والطلب</h3>
+          <div class="lead-details">
+            {% if lead.quantity %}
+              <div class="lead-qty"><b>الكمية:</b> <strong>{{ lead.quantity }}</strong></div>
+            {% endif %}
+            {% if lead.color_hex %}
+              <div class="lead-color-row">
+                <b>اللون:</b>
+                <span class="lead-swatch lead-swatch-lg" style="background:{{ lead.color_hex }}" title="{{ lead.color_hex }}"></span>
+                <code dir="ltr">{{ lead.color_hex }}</code>
+              </div>
+            {% endif %}
+            {% if lead.extras_chips %}
+              <div class="lead-chips" aria-label="إضافات التصميم">
+                {% for chip in lead.extras_chips %}
+                  <span class="lead-chip {% if chip.on %}is-on{% else %}is-off{% endif %}">{{ chip.label }}{% if not chip.on %} · لا{% endif %}</span>
+                {% endfor %}
+              </div>
+            {% elif lead.extras_label %}
+              <div><b>إضافات:</b> {{ lead.extras_label }}</div>
+            {% endif %}
+            {% if lead.logo_mode_label or lead.logo_pos_label or lead.logo_size_label %}
+              <div class="lead-logo-meta">
+                {% if lead.logo_mode_label %}<span>وضع الصورة: {{ lead.logo_mode_label }}</span>{% endif %}
+                {% if lead.logo_pos_label %}<span>مكان: {{ lead.logo_pos_label }}</span>{% endif %}
+                {% if lead.logo_size_label %}<span>حجم: {{ lead.logo_size_label }}</span>{% endif %}
+              </div>
+            {% endif %}
+            {% if lead.place_type %}<div><b>نوع المكان:</b> {{ lead.place_type }}</div>{% endif %}
+            {% if lead.audience %}<div><b>الفئة:</b> {{ lead.audience }}</div>{% endif %}
+            {% if lead.template_name %}<div><b>القالب:</b> {{ lead.template_name }}</div>{% endif %}
+            {% if lead.notes %}<div><b>ملاحظات:</b> {{ lead.notes }}</div>{% endif %}
+          </div>
+        </section>
+
+        <section class="lead-block lead-block-media">
+          <h3>الصورة</h3>
+          {% if lead.image_name %}
+            <a class="lead-media" href="{{ url_for('main.uploaded_file', filename=lead.image_name) }}" target="_blank" rel="noopener">
+              <img src="{{ url_for('main.uploaded_file', filename=lead.image_name) }}" alt="صورة الطلب">
+              <span>{% if lead.logo_mode_label %}{{ lead.logo_mode_label }}{% else %}فتح الصورة{% endif %}</span>
+            </a>
+          {% else %}
+            <p class="lead-media-empty">بدون صورة مرفوعة</p>
+          {% endif %}
+        </section>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+    <div class="cms-panel">
+      <p class="cms-help" style="margin:0">
+        {% if filter_kind != 'all' or filter_status != 'all' %}
+          مفيش نتائج للفلتر ده.
+        {% else %}
+          لا توجد طلبات بعد. لما حد يبعت من استوديو التصميم هتظهر هنا.
+        {% endif %}
+      </p>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}

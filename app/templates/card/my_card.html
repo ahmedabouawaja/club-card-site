@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% from "partials/member_card.html" import render_card %}
+{% block title %}My Card — PULSE Athletic Club{% endblock %}
+{% block content %}
+<section class="stage">
+  <div class="stripe-field" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="stage-copy">
+    <h1>YOUR CARD</h1>
+    <p>Click the card to flip it.</p>
+  </div>
+  {{ render_card(presentation) }}
+  <div class="card-actions">
+    <button type="button" class="ghost-btn" data-flip>Flip card</button>
+    <button type="button" class="ghost-btn" data-pause>Pause rotation</button>
+  </div>
+  {% if card.is_frozen %}
+    <p class="flash flash-danger stage-note">This card is currently frozen. Contact the front desk.</p>
+  {% elif card.is_expired() %}
+    <p class="flash flash-danger stage-note">This membership has expired. Please renew.</p>
+  {% endif %}
+</section>
+{% endblock %}
+{% block footer %}{% endblock %}

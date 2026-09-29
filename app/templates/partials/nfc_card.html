@@ -1,0 +1,35 @@
+{% macro nfc_card(brand="كارلينك", number="XXXX XXXX XXXX", since="2024", logo="[YOUR LOGO]", spin="idle") -%}
+<div class="nfc-scene" data-nfc data-spin="{{ spin }}">
+  <div class="nfc-float">
+    <div class="nfc-inner">
+      <article class="nfc-face nfc-front">
+        <div class="nfc-sparkle" aria-hidden="true"></div>
+        <div class="nfc-wave" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nfc-logo" data-bind="logo">{{ logo }}</div>
+        <div class="nfc-midline"></div>
+        <div class="nfc-bottom">
+          <div>
+            <div class="nfc-brand" data-bind="brand">{{ brand }}</div>
+            <div class="nfc-number" data-bind="number">{{ number }}</div>
+            <div class="nfc-since" data-bind="since">MEMBER SINCE {{ since }}</div>
+          </div>
+          <div class="nfc-chip" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </div>
+      </article>
+      <article class="nfc-face nfc-back">
+        <div class="nfc-mag"></div>
+        <div class="nfc-back-row">
+          <div class="nfc-qr">QR</div>
+          <div>
+            <div class="nfc-back-title">NFC + QR</div>
+            <p>قرّب البطاقة أو امسح الرمز لتسجيل الحضور وفتح الملف الرقمي.</p>
+          </div>
+        </div>
+        <p class="nfc-legal">غير قابلة للتحويل. في حال العثور عليها أعدها لأقرب فرع.</p>
+      </article>
+    </div>
+  </div>
+</div>
+{%- endmacro %}

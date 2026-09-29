@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}كارلينك — بطاقات ذكية NFC + QR{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/site-nav.css') }}">
+</head>
+<body class="{% block body_class %}app{% endblock %}">
+<header class="topbar">
+  <a class="brand" href="{{ url_for('main.index') }}">
+    <img src="{{ url_for('static', filename='img/cardlink.svg') }}" alt="">
+    <span data-ar="كارلينك" data-en="CardLink">كارلينك</span>
+  </a>
+  <button class="nav-toggle" type="button" data-nav-toggle aria-label="القائمة">☰</button>
+  <nav data-nav>
+    <a href="{{ url_for('main.index') }}">الرئيسية</a>
+    <a href="{{ url_for('main.flex') }}">فليكس</a>
+    <a href="{{ url_for('main.personal') }}">للأفراد</a>
+    <a href="{{ url_for('main.readers') }}">أجهزة الدخول</a>
+    <a href="{{ url_for('main.index') }}#design">صمّم كارتك</a>
+    {% if current_user.is_authenticated %}
+      <a href="{{ url_for('card.my_card') }}" data-ar="بطاقتي" data-en="My card">بطاقتي</a>
+      {% if current_user.is_admin %}
+        <a href="{{ url_for('admin.content') }}">المحتوى</a>
+        <a href="{{ url_for('admin.leads') }}">الطلبات</a>
+        <a href="{{ url_for('admin.dashboard') }}">البطاقات</a>
+      {% endif %}
+      <form action="{{ url_for('auth.logout') }}" method="post" class="inline-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit" class="link-btn" data-ar="خروج" data-en="Log out">خروج</button>
+      </form>
+    {% else %}
+      <a class="lang-switch" href="{{ url_for('auth.login') }}" data-ar="دخول" data-en="Log in">دخول</a>
+    {% endif %}
+    <button type="button" class="lang-switch" data-lang>
+      <span>EN</span>
+      <em>/</em>
+      <strong>ع</strong>
+    </button>
+  </nav>
+</header>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flash-stack">
+      {% for category, message in messages %}
+        <div class="flash flash-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+
+{% block footer %}
+<footer class="site-foot">
+  <p>كارلينك · بطاقات PVC ذكية</p>
+</footer>
+{% endblock %}
+<script src="{{ url_for('static', filename='js/site-nav.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script type="application/json" id="tier-benefits">{{ benefits_json|default('{}')|safe }}</script>
+</body>
+</html>

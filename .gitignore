@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+*.db
+__pycache__/
+*.pyc
+instance/
+.venv/
+venv/
+_mobi_*.png
+*.log
+.DS_Store
+_unpacked/
+*.pdf
+"Card Website Design.html"
+Card\ Website\ Design.html

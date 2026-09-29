@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>صمّم واطلب كارتك — كارد لينك</title>
+<link rel="stylesheet" href="/static/css/order.css">
+<link rel="stylesheet" href="/static/css/site-nav.css">
+</head>
+<body class="order-page">
+<header class="ord-top">
+  <a class="brand" href="/"><i></i><span>كارد لينك</span></a>
+  <p class="ord-tag">كروت للشركات والأفراد — أول انطباع يفتح الباب</p>
+</header>
+
+<main class="ord-wrap">
+  <header class="ord-intro">
+    <p class="ord-kicker">اطلب بروفة مجانية قبل الطباعة</p>
+    <h1>كارتك… بهويتك</h1>
+    <p>اختار اللون، حط اللوجو زي ما تحب، ضيف NFC — وإحنا نكمّل التصميم للطباعة الاحترافية.</p>
+  </header>
+
+  <aside class="trust-bar" aria-label="ليش تطلب مننا">
+    <span>بروفة قبل التنفيذ</span>
+    <span>طباعة ألوان حقيقية</span>
+    <span>تسليم 3–7 أيام</span>
+    <span>مناسب للشركات والأفراد</span>
+  </aside>
+
+  <ol class="ord-steps" aria-label="خطوات الطلب">
+    <li class="is-on" data-step-dot="1">التصميم</li>
+    <li data-step-dot="2">الكمية والتواصل</li>
+  </ol>
+
+  <!-- Step 1: design -->
+  <section class="ord-panel is-on" data-step="1">
+    <div class="ord-grid">
+      <div class="ord-preview">
+        <div class="preview-badge">معاينة افتراضية</div>
+        <div class="card-live" data-card data-logo-mode="badge" data-logo-pos="center" data-logo-size="md">
+          <div class="card-fullimg" data-fullimg hidden>
+            <img alt="" data-fullimg-src>
+          </div>
+          <div class="card-shine"></div>
+          <div class="card-chip" data-chip></div>
+          <div class="card-nfc" data-nfc-mark hidden>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 8a6 6 0 0 1 0 8M12 5a10 10 0 0 1 0 14"/></svg>
+          </div>
+          <div class="card-logo" data-logo-wrap hidden>
+            <img alt="" data-logo-img>
+          </div>
+          <div class="card-name" data-card-name>اسمك / شركتك</div>
+          <div class="card-qr" data-qr-mark hidden></div>
+        </div>
+        <div class="preview-note">
+          <strong>دي معاينة تقريبية على الشاشة.</strong>
+          الكارت المطبوع بيطلع أوضح وأحدّ في الألوان واللمسة — فريق التصميم بيعدّل المسافات والتباين قبل التنفيذ عشان يبان فخم حتى لو الصورة المرفوعة مش مثالية.
+        </div>
+        <ul class="proof-points">
+          <li>تصحيح ألوان قبل الطباعة</li>
+          <li>موازنة اللوجو والنص مجانًا</li>
+          <li>تشوف البروفة وتعتمد قبل ما نطبع</li>
+        </ul>
+      </div>
+
+      <div class="ord-controls">
+        <div class="block">
+          <h2>اللون والدرجة</h2>
+          <p class="block-sub">اختار لون البراند بالظبط — إحنا نضبطه للطباعة عشان يطلع زي ما تتوقع (أو أحسن).</p>
+          <div class="picker">
+            <div class="wheel-wrap">
+              <canvas data-wheel width="220" height="220" aria-label="عجلة الألوان"></canvas>
+              <div class="wheel-knob" data-wheel-knob></div>
+            </div>
+            <div class="shade">
+              <label for="shade">الدرجة (فاتح ↔ غامق)</label>
+              <input id="shade" type="range" min="8" max="96" value="42" data-shade>
+              <div class="swatch-row">
+                <span class="swatch" data-swatch></span>
+                <input type="text" data-hex value="#8A4B1F" maxlength="7" dir="ltr" aria-label="كود اللون">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <h2>إضافات تخلّي الكارت يشتغل</h2>
+          <p class="block-sub">مش ديكور بس — NFC وQR يحوّلوا الكارت لأداة بيع وتعارف.</p>
+          <div class="extras" role="group" aria-label="إضافات">
+            <label class="extra"><input type="checkbox" name="nfc" data-extra checked><span>شريحة NFC</span></label>
+            <label class="extra"><input type="checkbox" name="logo" data-extra><span>لوجو / صورة</span></label>
+            <label class="extra"><input type="checkbox" name="qr" data-extra><span>رمز QR</span></label>
+            <label class="extra"><input type="checkbox" name="name_print" data-extra checked><span>اسم مطبوع</span></label>
+            <label class="extra"><input type="checkbox" name="gloss" data-extra><span>لمسة لامعة</span></label>
+            <label class="extra"><input type="checkbox" name="matte" data-extra><span>لمسة مطّية</span></label>
+          </div>
+
+          <div class="logo-panel" data-logo-box hidden>
+            <div class="logo-upload">
+              <label class="file-btn">
+                <input type="file" accept="image/png,image/jpeg,image/webp,image/gif" data-logo-file>
+                ارفع الصورة / اللوجو
+              </label>
+              <span class="file-name" data-logo-name>PNG شفاف أفضل — حد 2 ميجا</span>
+            </div>
+
+            <div class="logo-modes" role="radiogroup" aria-label="طريقة وضع الصورة">
+              <p class="modes-title">إزاي تحط الصورة على الكارت؟</p>
+              <label class="mode-card">
+                <input type="radio" name="logo_mode" value="badge" data-logo-mode checked>
+                <span>
+                  <b>في مكان وحجم معيّن</b>
+                  <small>لوجو أو صورة في ركن أو النص — الأنسب للهوية</small>
+                </span>
+              </label>
+              <label class="mode-card">
+                <input type="radio" name="logo_mode" value="cover" data-logo-mode>
+                <span>
+                  <b>تغطي الكارت كله</b>
+                  <small>صورة خلفية كاملة — مثالية للبراند القوي</small>
+                </span>
+              </label>
+            </div>
+
+            <div class="logo-place" data-place-controls>
+              <label>المكان
+                <select data-logo-pos>
+                  <option value="center">المنتصف</option>
+                  <option value="top-right">أعلى اليمين</option>
+                  <option value="top-left">أعلى الشمال</option>
+                  <option value="bottom-right">أسفل اليمين</option>
+                  <option value="bottom-left">أسفل الشمال</option>
+                </select>
+              </label>
+              <label>الحجم
+                <select data-logo-size>
+                  <option value="sm">صغير</option>
+                  <option value="md" selected>متوسط</option>
+                  <option value="lg">كبير</option>
+                </select>
+              </label>
+            </div>
+            <p class="logo-reassure">حتى لو الصورة مش مضبوطة 100٪ دلوقتي — مصممينا بيرتّبوها قبل الطباعة، وإنت تعتمد البروفة.</p>
+          </div>
+
+          <label class="name-field">
+            النص على الكارت
+            <input type="text" maxlength="28" placeholder="اسم الشركة أو الشخص" data-print-name>
+          </label>
+        </div>
+
+        <div class="hook-box">
+          <strong>ليه تبعت الطلب دلوقتي؟</strong>
+          <p>نبعتلك السعر حسب الكمية، وبعدها بروفة تشوفها قبل أي طباعة. مفيش مخاطرة — بتدفع بعد ما توافق على الشكل.</p>
+        </div>
+
+        <div class="ord-actions">
+          <button type="button" class="btn-gold" data-next>التالي — كمّل الطلب في دقيقة</button>
+        </div>
+        <p class="micro-copy">أكتر من شركة بتطبع دفعات للأفراد والموظفين من هنا — خليك جاهز قبل المنافس.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 2: contact -->
+  <section class="ord-panel" data-step="2">
+    <form class="ord-form" data-order-form novalidate>
+      <div class="step2-lead">
+        <h2 class="step2-title">خلّص الطلب… وإحنا نكلّمك بالسعر</h2>
+        <p>اكتب الكمية وبياناتك. الرد عادة خلال ساعات العمل — مش هتحتاج تسجّل حساب.</p>
+      </div>
+
+      <div class="block">
+        <h2>الكمية</h2>
+        <p class="block-sub">كل ما الكمية زادت، سعر القطعة ينزل. اختار التقريبي وإحنا نظبط العرض.</p>
+        <div class="qty-row" role="group" aria-label="الكمية">
+          <label class="qty"><input type="radio" name="quantity" value="50" data-qty><span>من 50</span></label>
+          <label class="qty"><input type="radio" name="quantity" value="100" data-qty checked><span>100</span></label>
+          <label class="qty"><input type="radio" name="quantity" value="250" data-qty><span>250 <em>الأشهر</em></span></label>
+          <label class="qty"><input type="radio" name="quantity" value="500+" data-qty><span>500 فأكثر</span></label>
+        </div>
+        <label class="name-field">
+          كمية مخصّصة (اختياري)
+          <input type="text" inputmode="numeric" placeholder="مثلاً 120" data-qty-custom maxlength="12">
+        </label>
+      </div>
+
+      <div class="block">
+        <h2>بيانات التواصل</h2>
+        <p class="block-sub">هنكلّمك أو نواتسك لتأكيد البروفة والسعر — بياناتك للأوردر بس.</p>
+        <div class="fields">
+          <label>رقم الموبايل
+            <input type="tel" name="phone" required placeholder="01xxxxxxxxx" data-phone maxlength="15" dir="ltr">
+          </label>
+          <label>رقم واتساب
+            <input type="tel" name="whatsapp" required placeholder="01xxxxxxxxx" data-whatsapp maxlength="15" dir="ltr">
+          </label>
+          <label class="full">العنوان
+            <textarea name="address" required rows="3" placeholder="المدينة، المنطقة، تفاصيل التوصيل" data-address maxlength="255"></textarea>
+          </label>
+          <label class="full">ملاحظات (اختياري)
+            <textarea name="notes" rows="2" placeholder="موعد مناسب، نوع الاستخدام، ألوان البراند…" data-notes maxlength="400"></textarea>
+          </label>
+        </div>
+      </div>
+
+      <div class="reassure-row">
+        <span>بروفة قبل الطباعة</span>
+        <span>بدون التزام بالدفع دلوقتي</span>
+        <span>رد سريع على واتساب</span>
+      </div>
+
+      <p class="form-error" data-error hidden></p>
+      <div class="ord-actions dual">
+        <button type="button" class="btn-ghost" data-back>رجوع للتصميم</button>
+        <button type="submit" class="btn-gold" data-submit>ابعت الطلب — هنتواصل معاك</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Success -->
+  <section class="ord-panel ord-success" data-step="done" hidden>
+    <div class="success-box">
+      <div class="success-mark" aria-hidden="true">✓</div>
+      <h2>طلبك وصل — هنرجع لك قريب</h2>
+      <p>فريق المبيعات هيراجع تصميمك ويقترح تحسينات لو لزم، وبعدين نبعتلك السعر والبروفة على واتساب.</p>
+      <p class="success-sub">جهّز رقمك قريب منك خلال ساعات العمل.</p>
+      <a class="btn-gold" href="/">الرجوع للرئيسية</a>
+    </div>
+  </section>
+</main>
+
+<script src="/static/js/order.js"></script>
+<script src="/static/js/site-nav.js"></script>
+</body>
+</html>

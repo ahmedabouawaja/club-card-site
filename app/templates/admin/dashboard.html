@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% from "partials/member_card.html" import render_card %}
+{% block title %}Card studio — PULSE Athletic Club{% endblock %}
+{% block content %}
+<section class="studio">
+  <div class="stage">
+    <div class="stripe-field" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="stage-copy">
+      <h1>CARD PREVIEW</h1>
+      <p>Click the card to flip it. Edit the details on the right.</p>
+    </div>
+    {{ render_card(presentation, "flip", true) }}
+    <div class="card-actions">
+      <button type="button" class="ghost-btn" data-flip>Flip card</button>
+      <button type="button" class="ghost-btn" data-pause>Pause rotation</button>
+    </div>
+  </div>
+
+  <aside class="studio-panel">
+    <div class="panel-head">
+      <h2>MEMBERS ({{ members|length }})</h2>
+      <button type="button" class="pill pill-dark" data-add-toggle>+ Add member</button>
+    </div>
+
+    <form id="add-member" class="add-form" method="post" action="{{ url_for('admin.add_member') }}" hidden>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <h3>New member</h3>
+      <label for="add-name">Member name</label>
+      <input id="add-name" name="name" type="text" required maxlength="120" autocomplete="name">
+      <label for="add-email">Email</label>
+      <input id="add-email" name="email" type="email" required maxlength="255" autocomplete="off">
+      <label for="add-password">Password</label>
+      <input id="add-password" name="password" type="password" required minlength="10" autocomplete="new-password">
+      <button type="submit" class="btn-accent full">Create member</button>
+    </form>
+
+    {% if members %}
+    <div class="member-list">
+      {% for user, card in members %}
+        {% set view = views[user.id] %}
+        <button type="button" class="member-row{% if selected and selected.id == user.id %} is-selected{% endif %}"
+          data-member
+          data-id="{{ user.id }}"
+          data-name="{{ user.name }}"
+          data-number="{{ card.member_no }}"
+          data-valid="{{ card.valid_until.strftime('%m/%y') }}"
+          data-tier="{{ view.tier }}"
+          data-accent="{{ view.accent }}"
+          data-frozen="{{ '1' if card.is_frozen else '0' }}">
+          <span class="dot dot-tier-{{ view.tier }}"></span>
+          <span class="who">{{ user.name }}</span>
+          <span class="tier-name">{{ view.tier|upper }}</span>
+        </button>
+      {% endfor %}
+    </div>
+
+    <form id="card-details" class="details" method="post"
+      action="{{ url_for('admin.update_details', user_id=selected.id) if selected else '#' }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="tier" value="{{ presentation.tier }}">
+      <input type="hidden" name="accent" value="{{ presentation.accent }}">
+      <h2>CARD DETAILS</h2>
+
+      <label for="member-name">Member name</label>
+      <input id="member-name" name="name" type="text" value="{{ selected.name if selected else '' }}" maxlength="120" required>
+
+      <div class="split-fields">
+        <div>
+          <label for="member-no">Member no.</label>
+          <input id="member-no" name="member_no" type="text" value="{{ selected_card.member_no if selected_card else '' }}" maxlength="32" required>
+        </div>
+        <div>
+          <label for="valid-thru">Valid thru</label>
+          <input id="valid-thru" name="valid_thru" type="text" inputmode="numeric" placeholder="MM/YY" value="{{ presentation.valid if selected else '' }}" required>
+        </div>
+      </div>
+
+      <label>Tier</label>
+      <div class="tier-picks">
+        {% for tier_id, meta in tier_meta.items() %}
+          <button type="button" class="tier-btn{% if presentation.tier == tier_id %} is-selected{% endif %}" data-tier="{{ tier_id }}">{{ meta.label }}</button>
+        {% endfor %}
+      </div>
+
+      <label>Accent color</label>
+      <div class="swatches">
+        {% for item in accents %}
+          <button type="button" class="swatch swatch-{{ item.id }}{% if presentation.accent == item.id %} is-selected{% endif %}" data-accent="{{ item.id }}" aria-label="{{ item.id }}"></button>
+        {% endfor %}
+      </div>
+      <p class="save-status" data-save-status></p>
+    </form>
+    {% if selected %}
+    <form method="post" action="{{ url_for('admin.toggle_freeze', user_id=selected.id) }}" class="freeze-row" id="freeze-form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button type="submit" class="link-btn">{{ "Unfreeze card" if selected_card.is_frozen else "Freeze card" }}</button>
+    </form>
+    {% endif %}
+    {% else %}
+      <p class="empty-members">No members yet. Add one to preview a card.</p>
+    {% endif %}
+  </aside>
+</section>
+{% endblock %}
+{% block footer %}{% endblock %}

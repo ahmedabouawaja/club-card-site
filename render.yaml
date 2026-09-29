@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: cardlink-site
+    runtime: python
+    plan: free
+    region: frankfurt
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120 run:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: SESSION_COOKIE_SECURE
+        value: "true"
+      - key: DATABASE_URL
+        value: sqlite:///instance/club.db
+      - key: RATELIMIT_STORAGE_URI
+        value: memory://
+      - key: BOOTSTRAP_ADMIN_EMAIL
+        value: asd
+      - key: BOOTSTRAP_ADMIN_PASSWORD
+        value: "123"
+      - key: BOOTSTRAP_ADMIN_NAME
+        value: Admin
+      - key: PYTHON_VERSION
+        value: "3.12.8"

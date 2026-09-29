@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head>
+<meta charset="utf-8">
+<title>أجهزة الدخول</title>
+<script src="/static/dc/02_e5b3c67d/e51c4a3f-08b1-4ff7-949a-f2ed9b758b78.js"></script>
+<script src="/static/dc/02_e5b3c67d/c6b6665d-6fc3-4c81-89e2-c494965bb7b2.js"></script>
+<script src="/static/dc/02_e5b3c67d/b4e01ba5-5193-4f61-b835-d7dc7cce9cb9.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* arabic */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/f9ddbe00-524c-4ef4-b8bb-5b573c6edebe.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/f3e09d33-c626-44f6-8d70-cc4475cb1a51.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/f7154b12-369f-4ee3-8fa9-7a32ccd6248a.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/55c19c86-5cc0-4ab8-b33a-ba2b60acca86.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/f9ddbe00-524c-4ef4-b8bb-5b573c6edebe.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/f3e09d33-c626-44f6-8d70-cc4475cb1a51.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/f7154b12-369f-4ee3-8fa9-7a32ccd6248a.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/55c19c86-5cc0-4ab8-b33a-ba2b60acca86.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/f9ddbe00-524c-4ef4-b8bb-5b573c6edebe.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/f3e09d33-c626-44f6-8d70-cc4475cb1a51.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/f7154b12-369f-4ee3-8fa9-7a32ccd6248a.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alexandria';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/55c19c86-5cc0-4ab8-b33a-ba2b60acca86.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/ea1822d9-df99-4703-b7a5-d12efb798d77.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/cbadbe46-58c0-4761-b767-ec58949b01e5.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/f24aabc2-a7b4-4478-80a4-818e65e9a032.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/eb9a9211-1f3b-46b2-880e-5b83aed66b73.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/652268cd-46f1-4c72-9f92-3693a245c93b.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/39f4e816-7088-45ff-b459-6bc92fc44f0c.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/9d1afc38-9a36-4d9e-90dd-dd6910ae01e7.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/38dfada2-fa7b-43d7-8b0b-d0e23d3fb4a8.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/fdbcef31-73d7-4d1d-b376-780e297e5cfe.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/c4a9a6f5-a2bd-456f-ae7f-c80efbed3949.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/cfd07876-43e4-4ab3-a823-48e6be5d4b6b.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/f1884510-d018-441e-8ba5-99c56ba94c75.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/18a4b556-d9d6-46f6-8442-c4f973b8611a.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/2980ae27-08b5-4eaf-8226-a1fe0f2b6584.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/f7b82804-2626-4a4b-8b51-5267f8517ebf.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/dbbd7c8a-e4af-441b-9129-94c0b3215f57.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/9d635b8a-5a50-4123-8c27-4e071a624088.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/ed1f2cd8-f32f-43be-8668-8abbbe1e52b3.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/47ffd4ad-5d73-45e0-8a4d-a7d706af39ea.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/ecc8a8f0-7d32-4fd2-a300-cd1a71abd13e.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/7e513b88-513e-438f-be2a-196563fc4af8.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/9d635b8a-5a50-4123-8c27-4e071a624088.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/ed1f2cd8-f32f-43be-8668-8abbbe1e52b3.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/47ffd4ad-5d73-45e0-8a4d-a7d706af39ea.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/ecc8a8f0-7d32-4fd2-a300-cd1a71abd13e.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/dc/02_e5b3c67d/7e513b88-513e-438f-be2a-196563fc4af8.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0;background:#f4ece1;font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif}
+a{color:#1a1410}a:hover{color:#8a4b1f}
+button{font-family:inherit}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tap{0%,100%{transform:translate(230px,150px) rotate(18deg)}32%,62%{transform:translate(0,0) rotate(-4deg)}}
+@keyframes ringOk{0%,34%,68%,100%{box-shadow:0 0 0 0 rgba(232,184,107,0);border-color:rgba(255,255,255,0.22)}40%,62%{box-shadow:0 0 44px 4px rgba(232,184,107,0.85),0 0 0 12px rgba(232,184,107,0.14);border-color:#e8b86b}}
+@keyframes okShow{0%,36%,70%,100%{opacity:0}42%,64%{opacity:1}}
+@keyframes idleShow{0%,36%,70%,100%{opacity:1}42%,64%{opacity:0}}
+@keyframes led{0%,36%,70%,100%{background:#43382f}42%,64%{background:#e8b86b;box-shadow:0 0 12px #e8b86b}}
+@keyframes laser{0%,100%{top:8px}50%{top:42px}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes arrow{0%{transform:translateY(-4px);opacity:0}40%{opacity:1}100%{transform:translateY(8px);opacity:0}}
+.spin{animation:spin 60s linear infinite;transform-origin:50% 50%}
+.tap{animation:tap 4.5s cubic-bezier(.6,0,.3,1) infinite}
+.ring{animation:ringOk 4.5s ease infinite}
+.ok{animation:okShow 4.5s ease infinite}
+.idle{animation:idleShow 4.5s ease infinite}
+.led{animation:led 4.5s ease infinite}
+.laser{animation:laser 2.2s ease-in-out infinite}
+.arrow{animation:arrow 1.6s ease-in infinite}
+.enter{animation:fadeUp .8s cubic-bezier(.2,.7,.2,1) both}
+.enter2{animation:fadeUp .8s cubic-bezier(.2,.7,.2,1) .15s both}
+.reveal{animation:fadeUp linear both;animation-timeline:view();animation-range:entry 0% cover 26%}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+
+<div style="width: 1440px; height: 2100px; box-sizing: border-box; position: relative; overflow: clip; background: #f4ece1; color: #1a1410; font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif">
+
+  <!-- ============ HERO ============ -->
+  <section style="position: relative; height: 900px">
+    <!-- the dark curved "building" -->
+    <svg width="1440" height="900" sc-camel-view-box="0 0 1440 900" style="position: absolute; inset: 0" aria-hidden="true">
+      <defs>
+        <clipPath id="darkShape"><path d="{{shape}}"></path></clipPath>
+        <linearGradient id="darkFill" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#2e241d"></stop>
+          <stop offset="1" stop-color="#110c09"></stop>
+        </linearGradient>
+      </defs>
+      <path d="{{shape}}" fill="url(#darkFill)"></path>
+      <g clip-path="url(#darkShape)" fill="none" stroke-linecap="round">
+        <path d="{{floors}}" stroke="rgba(255,255,255,0.09)" stroke-width="2"></path>
+        <path d="{{columns}}" stroke="rgba(255,255,255,0.05)" stroke-width="1.5"></path>
+      </g>
+    </svg>
+
+    <!-- top bar -->
+    <a href="/" style="position: absolute; right: 64px; top: 46px; font-family: 'Alexandria', sans-serif; font-size: 20px; font-weight: 800; color: #ffffff; text-decoration: none; z-index: 3">{{brandName}}</a>
+    <div style="position: absolute; right: 320px; top: 44px; width: 780px; display: flex; gap: 60px; z-index: 3">
+      <p style="margin: 0; flex: 1; font-size: 14px; line-height: 1.8; color: #5e554d">بطاقاتك وقارئ واحد عند الباب — الدخول يبقى بلمسة بدل الكشوف الورق والمفاتيح.</p>
+      <p style="margin: 0; flex: 1; font-size: 14px; line-height: 1.8; color: #5e554d">قارئات لبطاقات NFC ورموز QR تناسب مداخل الشركات وأماكن العمل والأندية والجيم.</p>
+    </div>
+    <a href="#start" style="position: absolute; left: 64px; top: 40px; height: 46px; padding: 0 26px; border-radius: 999px; background: #1a1410; color: #ffffff; font-size: 15px; font-weight: 700; text-decoration: none; display: flex; align-items: center; z-index: 3">اطلب معاينة للمكان</a>
+
+    <!-- vertical nav -->
+    <nav style="position: absolute; left: 64px; top: 250px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; font-size: 15px; z-index: 3">
+      <a href="/" style="color: #6f655c; text-decoration: none">الرئيسية</a>
+      <span style="color: #8a4b1f; font-weight: 700">أجهزة الدخول</span>
+      <a href="/flex" style="color: #6f655c; text-decoration: none">فليكس</a>
+      <a href="#places" style="color: #6f655c; text-decoration: none">الأماكن</a>
+      <a href="/personal" style="color: #6f655c; text-decoration: none">للأفراد</a>
+      <a href="#start" style="color: #6f655c; text-decoration: none">تواصل</a>
+    </nav>
+
+    <!-- headline -->
+    <div style="position: absolute; left: 64px; top: 480px; width: 380px; display: flex; flex-direction: column; gap: 14px; z-index: 3">
+      <h1 class="enter" style="margin: 0; font-family: 'Alexandria', sans-serif; font-size: 78px; line-height: 1.1; font-weight: 800; letter-spacing: -1px">{{readersHeadline}}</h1>
+      <p class="enter2" style="margin: 0; font-size: 17px; line-height: 1.8; color: #4d443c">{{readersText}}</p>
+    </div>
+
+    <!-- scroll circle -->
+    <a href="#places" style="position: absolute; left: 64px; top: 760px; width: 96px; height: 96px; border-radius: 50%; background: #8a4b1f; color: #ffffff; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 2px; box-shadow: 0 16px 30px rgba(138,75,31,0.35); z-index: 3">
+      SCROLL
+      <svg class="arrow" width="12" height="18" sc-camel-view-box="0 0 12 18" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"><path d="M6 1v15M2 12l4 4 4-4"></path></svg>
+    </a>
+
+    <!-- rotating arc text (inverts over light / dark) -->
+    <svg class="spin" width="700" height="700" sc-camel-view-box="0 0 700 700" style="position: absolute; left: 650px; top: 170px; mix-blend-mode: difference; z-index: 2; overflow: visible" aria-hidden="true">
+      <defs><path id="arc" d="M60 350a290 290 0 1 1 580 0a290 290 0 1 1 -580 0"></path></defs>
+      <text fill="#ffffff" font-family="Oswald, sans-serif" font-weight="600" font-size="40" letter-spacing="3" sc-camel-text-length="1800">
+        <textPath href="#arc">ACCESS CONTROL • GYMS • CLUBS • WORKPLACES • ENTRANCES • NFC · QR •</textPath>
+      </text>
+    </svg>
+
+    <!-- the reader + card tap -->
+    <div style="position: absolute; left: 905px; top: 355px; width: 190px; height: 330px; z-index: 4">
+      <div style="position: absolute; inset: -30px; border-radius: 50px; background: radial-gradient(ellipse, rgba(232,184,107,0.16), rgba(232,184,107,0) 70%)"></div>
+      <div style="position: absolute; inset: 0; border-radius: 30px; background: linear-gradient(160deg, #3b322b, #1a1411); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 40px 70px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08)">
+        <div class="led" style="position: absolute; left: 20px; top: 16px; width: 8px; height: 8px; border-radius: 50%; background: #43382f"></div>
+        <div style="position: absolute; left: 20px; right: 20px; top: 32px; height: 70px; border-radius: 12px; background: #0d0907; border: 1px solid rgba(255,255,255,0.06)">
+          <div class="idle" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; color: rgba(255,255,255,0.62)">مرّر البطاقة</div>
+          <div class="ok" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 700; color: #f3d7a4">
+            <svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="#e8b86b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg>
+            أهلاً بك
+          </div>
+        </div>
+        <div class="ring" style="position: absolute; left: 40px; top: 122px; width: 110px; height: 110px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center">
+          <svg width="40" height="40" sc-camel-view-box="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.6" stroke-linecap="round"><path d="M8 8a6 6 0 0 1 0 8M11.5 5.5a10 10 0 0 1 0 13M15 3a14 14 0 0 1 0 18"></path></svg>
+        </div>
+        <div style="position: absolute; left: 34px; right: 34px; bottom: 26px; height: 54px; border-radius: 10px; background: linear-gradient(180deg, #0e0a08, #1d1612); border: 1px solid rgba(255,255,255,0.06); overflow: hidden">
+          <div class="laser" style="position: absolute; left: 8px; right: 8px; top: 8px; height: 2px; background: #e8b86b; box-shadow: 0 0 10px #e8b86b"></div>
+        </div>
+      </div>
+      <div class="tap" style="position: absolute; left: -5px; top: 114px; width: 200px; height: 126px; border-radius: 12px; background: linear-gradient(135deg, #ffffff, #efe8de); box-shadow: 0 24px 40px rgba(0,0,0,0.5)">
+        <span style="position: absolute; right: 16px; top: 14px; font-family: 'Alexandria', sans-serif; font-size: 13px; font-weight: 700; color: #1f1a16">{{brandName}}</span>
+        <svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="#8a4b1f" stroke-width="2" stroke-linecap="round" style="position: absolute; left: 14px; top: 13px"><path d="M8 8a6 6 0 0 1 0 8M11.5 5.5a10 10 0 0 1 0 13"></path></svg>
+        <span style="position: absolute; right: 16px; bottom: 14px; font-size: 11px; letter-spacing: 1px; color: rgba(31,26,22,0.6)">ID 0001</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLACES ============ -->
+  <section id="places" style="position: relative; height: 820px; padding: 110px 64px 0; box-sizing: border-box; display: flex; flex-direction: column; gap: 56px">
+    <div class="reveal" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 60px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span style="font-family: 'Oswald', sans-serif; font-size: 14px; letter-spacing: 3px; color: #8a4b1f">WHERE IT WORKS</span>
+        <h2 style="margin: 0; font-family: 'Alexandria', sans-serif; font-size: 54px; line-height: 1.15; font-weight: 800">قارئ عند كل باب</h2>
+      </div>
+      <p style="margin: 0; max-width: 460px; font-size: 16px; line-height: 1.8; color: #544a42">نفس البطاقة اللي بنطبعها لك تشتغل على القارئ — للموظفين والأعضاء والمشتركين.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px">
+      <sc-for list="{{places}}" as="p" hint-placeholder-count="4">
+        <div class="reveal" style="display: flex; flex-direction: column; gap: 18px">
+          <div style="position: relative; height: 330px; border-radius: 6px; overflow: hidden; background: linear-gradient(160deg, #2e241d, #120d0a)">
+            <svg width="100%" height="100%" sc-camel-view-box="0 0 320 330" sc-camel-preserve-aspect-ratio="none" style="position: absolute; inset: 0" fill="none" aria-hidden="true">
+              <path d="M-20 40C80 10 200 80 340 40M-20 90C80 60 200 130 340 90M-20 140C80 110 200 180 340 140M-20 190C80 160 200 230 340 190M-20 240C80 210 200 280 340 240M-20 290C80 260 200 330 340 290" stroke="rgba(255,255,255,0.07)" stroke-width="2"></path>
+            </svg>
+            <span style="position: absolute; right: 22px; top: 16px; font-family: 'Oswald', sans-serif; font-size: 56px; font-weight: 600; color: rgba(255,255,255,0.14)">{{p.num}}</span>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center">
+              <svg width="96" height="96" sc-camel-view-box="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="{{p.icon}}"></path></svg>
+            </div>
+            <div style="position: absolute; left: 20px; bottom: 20px; width: 12px; height: 12px; border-radius: 50%; background: #e8b86b; box-shadow: 0 0 14px #e8b86b"></div>
+          </div>
+          <h3 style="margin: 0; font-family: 'Alexandria', sans-serif; font-size: 22px; font-weight: 700">{{p.t}}</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #544a42">{{p.d}}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ START / CONTACT ============ -->
+  <section id="start" style="position: relative; height: 380px; background: #1a1410; color: #ffffff; overflow: hidden">
+    <svg width="1440" height="380" sc-camel-view-box="0 0 1440 380" style="position: absolute; inset: 0" fill="none" aria-hidden="true">
+      <path d="M0 60C400 0 900 140 1440 50M0 130C400 70 900 210 1440 120M0 200C400 140 900 280 1440 190M0 270C400 210 900 350 1440 260M0 340C400 280 900 420 1440 330" stroke="rgba(255,255,255,0.06)" stroke-width="2"></path>
+    </svg>
+    <div style="position: relative; height: 100%; padding: 0 64px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 60px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 620px">
+        <h2 style="margin: 0; font-family: 'Alexandria', sans-serif; font-size: 44px; line-height: 1.2; font-weight: 800">عايز قارئ بطاقات في مكانك؟</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.72)">اختار نوع المكان، وقولنا عدد الأعضاء أو الموظفين، ونرشح لك القارئ والبطاقات المناسبة مع عرض سعر.</p>
+        <div style="display: flex; gap: 10px; margin-top: 6px">
+          <sc-for list="{{placeChips}}" as="c" hint-placeholder-count="4">
+            <button sc-camel-on-click="{{c.pick}}" style="height: 42px; padding: 0 18px; border-radius: 999px; border: 1px solid {{c.border}}; background: {{c.bg}}; color: {{c.color}}; font-size: 14px; font-weight: 600; cursor: pointer">{{c.label}}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: stretch; gap: 12px; width: 320px">
+        <a href="{{waLink}}" style="height: 58px; border-radius: 999px; background: #e8b86b; color: #2a1606; font-size: 17px; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px">
+          <svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#2a1606" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"></path></svg>
+          اطلب معاينة على واتساب
+        </a>
+        <a href="/" style="height: 52px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.3); color: #ffffff; font-size: 15px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center">الرجوع للرئيسية</a>
+        <a href="/flex" style="height: 46px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.82); font-size: 14px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center">كارت فليكس</a>
+        <a href="/personal" style="height: 46px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.82); font-size: 14px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center">للأفراد</a>
+      </div>
+    </div>
+    <span style="position: absolute; right: 64px; bottom: 22px; font-size: 13px; color: rgba(255,255,255,0.5)">© 2026 {{brandName}} — البحيرة، دمنهور</span>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;كارد لينك&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;20XXXXXXXXXX&quot;},&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:2100}}">
+class Component extends DCLogic {
+  constructor() {
+    super();
+    this.state = { place: 0 };
+  }
+
+  renderVals() {
+    const cms = window.__CMS__ || {};
+    const settings = cms.settings || {};
+    const brandName = settings.brand_name || this.props.brandName || 'كارد لينك';
+    const waNum = String(settings.whatsapp || this.props.whatsapp || '20XXXXXXXXXX').replace(/[^0-9]/g, '');
+    const s = this.state;
+
+    const shape = 'M1440 0L1200 0C1180 90 1230 170 1150 240C1060 320 900 250 820 330C760 390 780 460 700 520C620 580 380 640 300 900L1440 900Z';
+    let floors = '';
+    for (let y = 40; y <= 960; y += 52) {
+      floors += 'M260 ' + y + 'C640 ' + (y - 140) + ' 1040 ' + (y + 120) + ' 1460 ' + (y - 30);
+    }
+    let columns = '';
+    for (let x = 300; x <= 1460; x += 46) {
+      columns += 'M' + x + ' 0C' + (x - 40) + ' 300 ' + (x + 40) + ' 600 ' + x + ' 900';
+    }
+
+    const placeSrc = (cms.places && cms.places.length) ? cms.places : [
+      { t: 'مداخل الشركات والمباني', d: 'الموظف أو الزائر يمرّر البطاقة على القارئ عند الباب.', icon: 'M6 21V3h12v18M3 21h18M14.5 12v.01', chip: 'مدخل شركة' },
+      { t: 'الحضور والانصراف', d: 'تسجيل حضور الموظفين بلمسة بدل الكشوف الورق.', icon: 'M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z', chip: 'مكان عمل' },
+      { t: 'الأندية', d: 'دخول الأعضاء للنادي والمرافق ببطاقة العضوية.', icon: 'M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4', chip: 'نادي' },
+      { t: 'الجيم والعضويات', d: 'بطاقة لكل مشترك تُمرَّر عند الدخول لمتابعة الحضور.', icon: 'M6 7v10M3 9v6M18 7v10M21 9v6M6 12h12', chip: 'جيم' }
+    ];
+    const places = placeSrc.map((p, i) => ({
+      num: String(i + 1).padStart(2, '0'),
+      t: p.t, d: p.d, icon: p.icon || 'M12 3v18'
+    }));
+    const labels = placeSrc.map((p) => p.chip || p.t);
+    if (s.place >= labels.length) s.place = 0;
+    const placeChips = labels.map((l, i) => ({
+      label: l,
+      border: i === s.place ? '#e8b86b' : 'rgba(255,255,255,0.25)',
+      bg: i === s.place ? 'rgba(232,184,107,0.12)' : 'transparent',
+      color: i === s.place ? '#f6e3c2' : 'rgba(255,255,255,0.8)',
+      pick: () => this.setState({ place: i })
+    }));
+    const readersHeadline = settings.readers_headline || 'ادخل بلمسة.';
+    const readersText = settings.readers_text || 'قارئ البطاقات عند المدخل، ومكان العمل، والنادي، والجيم.';
+    const msg = 'مرحباً، أريد معاينة لقارئ بطاقات\nنوع المكان: ' + labels[s.place] + '\nعدد الأعضاء / الموظفين تقريباً: ';
+    const waLink = 'https://wa.me/' + waNum + '?text=' + encodeURIComponent(msg);
+
+    return { brandName, shape, floors, columns, places, placeChips, waLink, readersHeadline, readersText };
+  }
+}
+</script>
+
+
+<script src="/static/js/leads.js"></script>
+</body></html>
